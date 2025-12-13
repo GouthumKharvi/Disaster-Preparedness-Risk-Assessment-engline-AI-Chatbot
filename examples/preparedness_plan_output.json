@@ -1,0 +1,25 @@
+{
+  "location": "udupi",
+  "policy": "Standard Home Insurance",
+  "plan": [
+    "Keep emergency contact numbers easily accessible.",
+    "Store important documents in waterproof bags.",
+    "Maintain a basic first-aid kit and flashlights.",
+    "Have at least 3 days of water and non-perishable food.",
+    "No immediate weather-based risks detected. Maintain general preparedness.",
+    "Policy Note: Your current policy is 'Standard Home Insurance'. Ensure it covers damages for the detected risks (if any). Keep insurer contact information accessible."
+  ],
+  "generated_at": "2025-12-11T19:37:06.564612",
+  "risk_summary": {
+    "score": 0.05,
+    "level": "Low",
+    "history_score": 0.1,
+    "weather_score": 0.0
+  },
+  "weather_analysis": {
+    "max_precip_mm": 0.0,
+    "max_temp_c": 35.3,
+    "max_wind_ms": 4.25,
+    "risks_found": {}
+  }
+}

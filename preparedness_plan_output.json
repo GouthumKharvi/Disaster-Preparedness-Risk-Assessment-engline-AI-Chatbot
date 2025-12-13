@@ -1,0 +1,24 @@
+{
+  "location": "Udupi",
+  "policy": "Standard Home Insurance",
+  "plan": [
+    "Keep important documents in waterproof bags.",
+    "Maintain a small emergency medical kit.",
+    "Know the nearest shelter and evacuation route.",
+    "No immediate weather-based risks detected. Maintain general preparedness.",
+    "Policy note: Your recorded policy is 'Standard Home Insurance'. Check policy coverages for relevant damages (flood/storm) and save insurer contact."
+  ],
+  "generated_at": "2025-12-10T22:14:42.058517",
+  "risk_summary": {
+    "score": 0.25,
+    "level": "Low",
+    "history_score": 0.5,
+    "weather_score": 0.0
+  },
+  "weather_analysis": {
+    "max_precip_mm": 0.0,
+    "max_temp_c": 35.4,
+    "max_wind_ms": 14.9,
+    "risks_found": {}
+  }
+}

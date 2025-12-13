@@ -1,0 +1,24 @@
+{
+  "location": "13.34,74.74",
+  "lat": 13.34,
+  "lon": 74.74,
+  "history_risk": "low",
+  "weather_analysis": {
+    "max_precip_mm": 0.0,
+    "max_temp_c": 30.4,
+    "max_wind_ms": 21.9,
+    "risks_found": {
+      "storm": {
+        "label": "Storm Risk",
+        "metric": 21.9
+      }
+    }
+  },
+  "aggregate": {
+    "score": 0.25,
+    "level": "Low",
+    "history_score": 0.1,
+    "weather_score": 0.4
+  },
+  "policy": "Home Insurance"
+}

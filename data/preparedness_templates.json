@@ -1,0 +1,44 @@
+{
+  "General": [
+    "Keep important documents in waterproof bags.",
+    "Maintain a small emergency medical kit.",
+    "Know the nearest shelter and evacuation route."
+  ],
+
+  "Flood Risk": [
+    "Move valuables to higher shelves.",
+    "Prepare extra drinking water and dry food.",
+    "Turn off electricity if flooding begins.",
+    "Have contact details of local rescue teams."
+  ],
+
+  "Storm Risk": [
+    "Secure outdoor furniture.",
+    "Charge your devices and power banks.",
+    "Stay indoors and avoid travel during storm warnings."
+  ],
+
+  "Heatwave Risk": [
+    "Stay hydrated and avoid going out during peak afternoon.",
+    "Check on elderly and children.",
+    "Store oral rehydration salts and water."
+  ],
+
+  "Landslide Risk": [
+    "Avoid travel near steep slopes during heavy rains.",
+    "Identify safe alternate routes.",
+    "Stay updated with local emergency alerts."
+  ],
+
+  "Lightning & Thunderstorm Risk": [
+    "Unplug electrical appliances during thunderstorms.",
+    "Stay indoors and avoid open areas.",
+    "Do not stand under tall trees during lightning."
+  ],
+
+  "Cold Wave Risk": [
+    "Use proper warm clothing and blankets.",
+    "Avoid faulty or unsafe heating equipment.",
+    "Provide extra care for elderly, children and pets."
+  ]
+}

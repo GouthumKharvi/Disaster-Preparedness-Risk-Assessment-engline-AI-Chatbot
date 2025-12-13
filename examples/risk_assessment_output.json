@@ -1,0 +1,19 @@
+{
+  "location": "udupi",
+  "lat": 13.5269784,
+  "lon": 74.8731879,
+  "history_risk": "low",
+  "weather_analysis": {
+    "max_precip_mm": 0.0,
+    "max_temp_c": 35.3,
+    "max_wind_ms": 4.25,
+    "risks_found": {}
+  },
+  "aggregate": {
+    "score": 0.05,
+    "level": "Low",
+    "history_score": 0.1,
+    "weather_score": 0.0
+  },
+  "policy": "Standard Home Insurance"
+}

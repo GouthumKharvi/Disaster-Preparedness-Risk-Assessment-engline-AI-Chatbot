@@ -1,0 +1,17 @@
+{
+  "policy_name": "Standard Home Insurance",
+  "coverage": {
+    "fire_damage": true,
+    "storm_damage": true,
+    "flood_damage": false,
+    "theft": true,
+    "personal_property": true,
+    "temporary_accommodation": true
+  },
+  "exclusions": [
+    "Earthquake damage",
+    "Wear and tear",
+    "Negligence-related loss"
+  ],
+  "policy_notes": "Coverage varies for specific disasters. Review your policy document for detailed terms and conditions."
+}
