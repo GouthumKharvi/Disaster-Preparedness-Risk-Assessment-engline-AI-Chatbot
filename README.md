@@ -900,7 +900,8 @@ Assisto Technologies Inc/
 ## 📸 Screenshots
 
 ### Main Chat Interface
-![Chat Interface](screenshots/chat_interface.png)
+![Chat Interface](<img width="1918" height="965" alt="main page chatbot" src="https://github.com/user-attachments/assets/5f87d2f9-2baf-41b8-b77b-d71cabf1931d" />
+)
 *Natural conversational interface with risk assessment*
 
 ### Risk Assessment Display
@@ -966,8 +967,11 @@ This is an educational project. If you'd like to suggest improvements:
 
 Fork the repository
 Create a feature branch (git checkout -b feature/AmazingFeature)
+
 Commit your changes (git commit -m 'Add some AmazingFeature')
+
 Push to the branch (git push origin feature/AmazingFeature)
+
 Open a Pull Request
 
 
@@ -976,9 +980,9 @@ Gouthum Kharvi
 
 Role: Data Analyst | AI & ML Practitioner
 Project: Assessment Submission for Assisto Technologies Inc
-LinkedIn: [Your LinkedIn Profile]
-Email: [Your Email]
-Portfolio: [Your Portfolio Website]
+LinkedIn: https://www.linkedin.com/in/gouthum-kharvi-2366a6219/
+Email: gouthumkharvi1899@gmail.com
+Portfolio: (https://gouthumkharvi.github.io/Datascience_Portfolio/)
 
 
 🙏 Acknowledgments
@@ -1005,7 +1009,7 @@ Usage Rights:
 For questions or issues:
 
 Open an Issue
-Email: your.email@example.com
+Email: gouthumkharvi1899@gmail.com
 Project Discussion: Discussions
 
 
@@ -1024,11 +1028,17 @@ If you found this project helpful or interesting, please consider giving it a st
 This README is:
 
 ✅ Comprehensive - Covers every aspect of the project
+
 ✅ Professional - GitHub-ready formatting
+
 ✅ Visual - Uses emojis, tables, diagrams
+
 ✅ Complete - Includes all 23 requirements
+
 ✅ Searchable - Well-organized with table of contents
+
 ✅ Technical - Detailed function explanations
+
 ✅ Practical - Installation, usage, testing guides
 
 ---
