@@ -900,7 +900,7 @@ Assisto Technologies Inc/
 ## 📸 Screenshots
 
 ### Main Chat Interface
-![Chat Interface](<img width="1918" height="965" alt="main page chatbot" src="https://github.com/user-attachments/assets/5f87d2f9-2baf-41b8-b77b-d71cabf1931d" />
+(<img width="1918" height="965" alt="main page chatbot" src="https://github.com/user-attachments/assets/5f87d2f9-2baf-41b8-b77b-d71cabf1931d" />
 )
 *Natural conversational interface with risk assessment*
 
