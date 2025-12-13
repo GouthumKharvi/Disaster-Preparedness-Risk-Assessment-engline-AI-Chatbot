@@ -4,10 +4,7 @@ Here's a comprehensive, professional README.md for your GitHub repository:
 ```markdown
 # 🌪️ Disaster Preparedness AI Chatbot
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-FF4B4B.svg)](https://streamlit.io/)
-[![Groq](https://img.shields.io/badge/LLM-Groq%20Llama%203.3-green.svg)](https://groq.com/)
-[![License](https://img.shields.io/badge/License-Educational-yellow.svg)]()
+
 
 An intelligent AI-powered chatbot that assesses real-time disaster risks and generates personalized emergency preparedness plans using **Groq LLM (Llama 3.3 70B)** and **Open-Meteo Weather API**.
 
