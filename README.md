@@ -783,7 +783,10 @@ Ask "Check weather in Mumbai" three times
 
 ```
 Assisto Technologies Inc/
-│
+│── Images
+    ├── riskassesment.png                 # riskassesment.png
+│   ├── main page chatbot.png            # main page chatbot.png
+│   ├── preparednessplan.png             # preparednessplan.png
 ├── app.py                              # Main Streamlit chatbot application
 ├── requirements.txt                     # Python dependencies
 ├── README.md                           # This file
@@ -905,16 +908,17 @@ Assisto Technologies Inc/
 *Natural conversational interface with risk assessment*
 
 ### Risk Assessment Display
-![Risk Display](screenshots/risk_display.png)
+<img width="1457" height="526" alt="riskassesment" src="https://github.com/user-attachments/assets/9b237764-94f0-4728-9890-9e3cd5630963" />
+
 *Color-coded risk badges and detailed analysis*
 
 ### Preparedness Plan
-![Preparedness Plan](screenshots/plan_display.png)
+
+<img width="1156" height="781" alt="preparednessplan" src="https://github.com/user-attachments/assets/c3b6bad6-28dc-4e8d-9863-13125ec4138e" />
+
 *Personalized action steps based on detected risks*
 
-### Detailed Assessment View
-![Detailed View](screenshots/detailed_view.png)
-*Expandable section with JSON data and download option*
+
 
 ---
 
