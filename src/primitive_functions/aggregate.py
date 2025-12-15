@@ -66,3 +66,4 @@ def aggregate_scores(history_risk, weather_analysis):
         "history_score": hist_score,
         "weather_score": weather_score
     }
+ 
