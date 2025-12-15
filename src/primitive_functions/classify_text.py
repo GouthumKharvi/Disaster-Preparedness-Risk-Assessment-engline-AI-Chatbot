@@ -41,3 +41,4 @@ def classify_text(history_text):
         return "medium"
     else:
         return "low"
+ 
