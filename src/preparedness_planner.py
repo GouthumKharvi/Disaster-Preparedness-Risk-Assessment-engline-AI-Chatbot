@@ -57,7 +57,7 @@ def disaster_preparedness_planner(user_input=None, simulate_interaction_inputs=N
     plan_obj["risk_summary"] = risk_result["aggregate"]
     plan_obj["weather_analysis"] = risk_result["weather_analysis"]
 
-    # Step 4 — Display plan
+    # Step 4 — Display plan 
     display_plan(plan_obj)
 
     return plan_obj
