@@ -90,50 +90,72 @@ def get_insurance_plans(disaster_type, insurance_data):
     if not insurance_data or not disaster_type:
         return []
 
-    disaster_type = disaster_type.lower()
+    disaster_type = disaster_type.lower().strip()
+    
+    # Debug: Print what we're searching for
+    print(f"🔍 Searching for disaster type: '{disaster_type}'")
+    print(f"📊 Available keys in insurance_data: {list(insurance_data.keys())}")
 
-    # Check if it's the primary disaster type
+    # Check if it's the primary disaster type (flood)
     if "disaster_type" in insurance_data:
-        if disaster_type in insurance_data["disaster_type"].lower():
-            return insurance_data.get("insurance_plans", [])
+        primary_disaster = insurance_data["disaster_type"].lower()
+        print(f"🎯 Primary disaster in data: '{primary_disaster}'")
+        if disaster_type in primary_disaster or "flood" in disaster_type:
+            plans = insurance_data.get("insurance_plans", [])
+            print(f"✅ Found {len(plans)} plans for primary disaster")
+            return plans
     
     # Check in additional_disasters
     additional_disasters = insurance_data.get("additional_disasters", {})
-    if disaster_type in additional_disasters:
-        return additional_disasters[disaster_type].get("insurance_plans", [])
+    print(f"📁 Additional disasters available: {list(additional_disasters.keys())}")
     
-    # Search through all additional disasters
+    # Direct key match
+    if disaster_type in additional_disasters:
+        plans = additional_disasters[disaster_type].get("insurance_plans", [])
+        print(f"✅ Found {len(plans)} plans via direct key match")
+        return plans
+    
+    # Fuzzy matching - check if disaster_type is part of any key
     for key, value in additional_disasters.items():
-        if disaster_type in key.lower() or disaster_type in value.get("disaster_type", "").lower():
-            return value.get("insurance_plans", [])
-
+        key_lower = key.lower()
+        disaster_in_data = value.get("disaster_type", "").lower()
+        
+        if disaster_type in key_lower or disaster_type in disaster_in_data:
+            plans = value.get("insurance_plans", [])
+            print(f"✅ Found {len(plans)} plans via fuzzy match with key '{key}'")
+            return plans
+    
+    print(f"❌ No plans found for disaster type: '{disaster_type}'")
     return []
 
 
 def extract_disaster_from_text(text):
+    """Extract disaster type from user's text"""
     text = text.lower()
 
     disaster_map = {
-        "flood": ["flood", "flooding"],
-        "thunderstorm": ["thunderstorm", "storm", "heavy rain", "lightning"],
+        "flood": ["flood", "flooding", "waterlog", "inundation"],
+        "thunderstorm": ["thunderstorm", "storm", "heavy rain", "lightning", "thunder"],
         "cyclone": ["cyclone"],
-        "heatwave": ["heatwave", "heat"],
-        "cold_wave": ["cold wave", "coldwave"],
-        "winter_storm": ["winter storm"],
+        "heatwave": ["heatwave", "heat wave", "extreme heat"],
+        "cold_wave": ["cold wave", "coldwave", "extreme cold"],
+        "winter_storm": ["winter storm", "snow", "blizzard"],
         "hailstorm": ["hail", "hailstorm"],
         "hurricane": ["hurricane"],
-        "tornado": ["tornado"],
-        "drought": ["drought"],
-        "tsunami": ["tsunami"],
-        "pandemic": ["pandemic"],
-        "volcanic_eruption": ["volcanic", "volcano"]
+        "tornado": ["tornado", "twister"],
+        "drought": ["drought", "water scarcity"],
+        "tsunami": ["tsunami", "tidal wave"],
+        "pandemic": ["pandemic", "epidemic"],
+        "volcanic_eruption": ["volcanic", "volcano", "eruption"]
     }
 
     for disaster, keywords in disaster_map.items():
         for k in keywords:
             if k in text:
+                print(f"🎯 Detected disaster type: '{disaster}' from keyword: '{k}'")
                 return disaster
-
+    
+    print(f"⚠️ No disaster type detected in text: '{text[:50]}'")
     return None
 
 
@@ -979,21 +1001,37 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
         if st.session_state.insurance_requested and plan_obj:
             insurance_disaster = extract_disaster_from_text(prompt)
             
-            if not insurance_disaster:
-                insurance_disaster = (
-                    list(plan_obj["weather_analysis"].get("risks_found", {}).keys())[0]
-                    if plan_obj["weather_analysis"].get("risks_found")
-                    else "flood"
+            # If no disaster in prompt, check the location history
+            if not insurance_disaster and st.session_state.user_context.get('history'):
+                insurance_disaster = extract_disaster_from_text(
+                    st.session_state.user_context.get('history', '')
                 )
+            
+            # If still nothing, check risks_found from weather analysis
+            if not insurance_disaster:
+                risks = plan_obj["weather_analysis"].get("risks_found", {})
+                if risks:
+                    # Use the first detected risk
+                    insurance_disaster = list(risks.keys())[0]
+                    print(f"🔍 Using risk from weather analysis: '{insurance_disaster}'")
+            
+            # Final fallback to flood
+            if not insurance_disaster:
+                insurance_disaster = "flood"
+                print(f"⚠️ No disaster detected, defaulting to: 'flood'")
+            
+            print(f"🎯 Final disaster type for insurance: '{insurance_disaster}'")
             
             recommended_plans = get_insurance_plans(
                 insurance_disaster,
                 INSURANCE_DATA
             )
             
+            print(f"📋 Retrieved {len(recommended_plans)} insurance plans")
+            
             if recommended_plans:
                 st.markdown("---")
-                st.markdown("## 🏦 Recommended Insurance Plans")
+                st.markdown(f"## 🏦 Recommended Insurance Plans for {insurance_disaster.title()}")
                 
                 for plan in recommended_plans:
                     policy_details = plan.get("policy_details", {})
@@ -1026,9 +1064,10 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
 </div>
 """, unsafe_allow_html=True)
             else:
+                st.warning(f"⚠️ No insurance plans found for '{insurance_disaster}'. Please check your JSON file structure.")
                 st.info(
-                    "💡 No specific insurance plans found for the detected risks. "
-                    "Standard home insurance may provide basic coverage."
+                    "💡 Standard home insurance may provide basic coverage. "
+                    "Contact your insurance provider for specific disaster coverage."
                 )
         
         if plan_obj:
