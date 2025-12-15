@@ -51,7 +51,7 @@ def load_insurance_data():
     """
     Loads disaster insurance plans from JSON file with error handling.
     """
-    base_path = r"C:\Users\Gouthum\Downloads\Assisto Technologies Inc\JSON"
+    base_path = r"C:\Users\Gouthum\Downloads\Assisto Technologies Inc\JSON\disaster_insurance.json"
     file_path = os.path.join(base_path, "disaster_insurance.json")
     try:
         with open(file_path, "r", encoding="utf-8") as f:
