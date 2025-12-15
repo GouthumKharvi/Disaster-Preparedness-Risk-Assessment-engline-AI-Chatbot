@@ -49,27 +49,37 @@ except Exception as e:
 # -------------------------------------------------------
 def load_insurance_data():
     """
-    Loads disaster insurance plans from JSON file with error handling.
+    Loads disaster insurance plans from JSON file (Cloud-safe).
     """
-    base_path = r"C:\Users\Gouthum\Downloads\Assisto Technologies Inc\JSON"
-    file_path = os.path.join(base_path, "disaster_insurance.json")
     try:
+        # Get project root (where app.py is located)
+        project_root = os.path.dirname(os.path.abspath(__file__))
+
+        # Navigate to JSON folder inside project
+        file_path = os.path.join(
+            project_root,
+            "JSON",
+            "disaster_insurance.json"
+        )
+
         with open(file_path, "r", encoding="utf-8") as f:
-            content = f.read()
-            # Remove BOM if present
-            content = content.lstrip('\ufeff')
+            content = f.read().lstrip('\ufeff')
             data = json.loads(content)
+
         return data
-    except json.JSONDecodeError as e:
-        st.error(f"JSON parsing error in insurance file at line {e.lineno}, column {e.colno}: {e.msg}")
-        st.warning("Please check your disaster_insurance.json file for syntax errors (extra commas, missing brackets, etc.)")
-        return {}
+
     except FileNotFoundError:
-        st.warning(f"Insurance data file not found at: {file_path}")
+        st.error("❌ disaster_insurance.json not found. Make sure it is inside the JSON folder in the repo.")
         return {}
+
+    except json.JSONDecodeError as e:
+        st.error(f"❌ JSON error at line {e.lineno}: {e.msg}")
+        return {}
+
     except Exception as e:
-        st.error(f"Failed to load insurance data: {str(e)}")
+        st.error(f"❌ Failed to load insurance data: {str(e)}")
         return {}
+
 
 def get_insurance_plans(disaster_type, insurance_data):
     """
