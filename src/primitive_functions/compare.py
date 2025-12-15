@@ -64,3 +64,4 @@ def compare_weather_to_thresholds(daily_data):
         "max_wind_ms": round(wind_ms, 2) if max_wind else 0,
         "risks_found": risks_found
     }
+ 
