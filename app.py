@@ -975,6 +975,62 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
         
         st.markdown(response, unsafe_allow_html=True)
         
+        # Show insurance plans directly in chat if user requested them
+        if st.session_state.insurance_requested and plan_obj:
+            insurance_disaster = extract_disaster_from_text(prompt)
+            
+            if not insurance_disaster:
+                insurance_disaster = (
+                    list(plan_obj["weather_analysis"].get("risks_found", {}).keys())[0]
+                    if plan_obj["weather_analysis"].get("risks_found")
+                    else "flood"
+                )
+            
+            recommended_plans = get_insurance_plans(
+                insurance_disaster,
+                INSURANCE_DATA
+            )
+            
+            if recommended_plans:
+                st.markdown("---")
+                st.markdown("## 🏦 Recommended Insurance Plans")
+                
+                for plan in recommended_plans:
+                    policy_details = plan.get("policy_details", {})
+                    
+                    policy_explanation = (
+                        plan.get("policy_explanation")
+                        or "No explanation provided"
+                    )
+                    
+                    why_choose = plan.get("why_choose_this_plan", "")
+                    
+                    st.markdown(f"""
+<div class="insurance-card">
+
+### 🛡️ {plan.get('plan_name', 'N/A')}
+
+**Best for:** {plan.get('best_for', 'N/A')}
+
+**💰 Premium:** {policy_details.get('premium', 'N/A')}  
+**🛡️ Coverage:** {policy_details.get('coverage_amount', 'N/A')}  
+**⏳ Duration:** {policy_details.get('policy_duration', 'N/A')}  
+**⏰ Waiting Period:** {policy_details.get('waiting_period', 'N/A')}
+
+**📘 Policy Explanation:**  
+{policy_explanation}
+
+**⭐ Why choose this plan?**  
+{why_choose}
+
+</div>
+""", unsafe_allow_html=True)
+            else:
+                st.info(
+                    "💡 No specific insurance plans found for the detected risks. "
+                    "Standard home insurance may provide basic coverage."
+                )
+        
         if plan_obj:
             with st.expander("📊 View Complete Risk Assessment & Preparedness Plan"):
                 col1, col2 = st.columns(2)
