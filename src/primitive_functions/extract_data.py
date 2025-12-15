@@ -17,3 +17,4 @@ def extract_data(obj, keys):
         raise ValueError("extract_data expects obj to be a dictionary.")
 
     return {key: obj.get(key) for key in keys}
+ 
