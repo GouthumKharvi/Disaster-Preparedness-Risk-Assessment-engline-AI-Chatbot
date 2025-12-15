@@ -124,4 +124,3 @@ def run_risk_engine_interactive(simulated_input=None):
         user_data = guide_user_interaction()
 
     return risk_assessment_engine(user_data)
- 
