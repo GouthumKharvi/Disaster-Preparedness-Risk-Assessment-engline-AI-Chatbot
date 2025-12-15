@@ -10,6 +10,7 @@ FIXES APPLIED:
 ✓ More varied LLM responses
 ✓ Insurance recommendation engine integrated
 ✓ Fixed JSON loading and Streamlit config order
+✓ All indentation issues fixed
 
 ============================================================================
 """
@@ -89,41 +90,61 @@ def get_insurance_plans(disaster_type, insurance_data):
     if not insurance_data or not disaster_type:
         return []
 
-    disaster_type = disaster_type.lower()
+    disaster_type = disaster_type.lower().strip()
 
-    # 🔥 FIX: match top-level disaster keys
-    if disaster_type in insurance_data:
-        return insurance_data[disaster_type].get("insurance_plans", [])
-
+    # Check if it's the primary disaster type (flood)
+    if "disaster_type" in insurance_data:
+        primary_disaster = insurance_data["disaster_type"].lower()
+        if disaster_type in primary_disaster or "flood" in disaster_type:
+            plans = insurance_data.get("insurance_plans", [])
+            return plans
+    
+    # Check in additional_disasters
+    additional_disasters = insurance_data.get("additional_disasters", {})
+    
+    # Direct key match
+    if disaster_type in additional_disasters:
+        plans = additional_disasters[disaster_type].get("insurance_plans", [])
+        return plans
+    
+    # Fuzzy matching - check if disaster_type is part of any key
+    for key, value in additional_disasters.items():
+        key_lower = key.lower()
+        disaster_in_data = value.get("disaster_type", "").lower()
+        
+        if disaster_type in key_lower or disaster_type in disaster_in_data:
+            plans = value.get("insurance_plans", [])
+            return plans
+    
     return []
 
 
 def extract_disaster_from_text(text):
+    """Extract disaster type from user's text"""
     text = text.lower()
 
     disaster_map = {
-        "flood": ["flood", "flooding"],
-        "thunderstorm": ["thunderstorm", "storm", "heavy rain", "lightning"],
+        "flood": ["flood", "flooding", "waterlog", "inundation"],
+        "thunderstorm": ["thunderstorm", "storm", "heavy rain", "lightning", "thunder"],
         "cyclone": ["cyclone"],
-        "heatwave": ["heatwave", "heat"],
-        "cold wave": ["cold wave", "coldwave"],
-        "winter storm": ["winter storm"],
-        "hail": ["hail", "hailstorm"],
+        "heatwave": ["heatwave", "heat wave", "extreme heat"],
+        "cold_wave": ["cold wave", "coldwave", "extreme cold"],
+        "winter_storm": ["winter storm", "snow", "blizzard"],
+        "hailstorm": ["hail", "hailstorm"],
         "hurricane": ["hurricane"],
-        "tornado": ["tornado"],
-        "drought": ["drought"],
-        "tsunami": ["tsunami"],
-        "pandemic": ["pandemic"],
-        "volcanic": ["volcanic", "volcano"]
+        "tornado": ["tornado", "twister"],
+        "drought": ["drought", "water scarcity"],
+        "tsunami": ["tsunami", "tidal wave"],
+        "pandemic": ["pandemic", "epidemic"],
+        "volcanic_eruption": ["volcanic", "volcano", "eruption"]
     }
 
     for disaster, keywords in disaster_map.items():
         for k in keywords:
             if k in text:
                 return disaster
-
+    
     return None
-
 
 
 def recommend_insurance_plan(disaster_type, insurance_data):
@@ -193,15 +214,42 @@ st.markdown("""
 <style>
     /* Main background - lighter gradient */
     .main {
-        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%) !important;
     }
     
-    /* Chat input container */
+    /* CRITICAL FIX: Make sure main container is visible */
+    .stApp {
+        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%) !important;
+    }
+    
+    /* CRITICAL FIX: Ensure chat container is visible */
+    [data-testid="stChatMessageContainer"] {
+        background-color: transparent !important;
+    }
+    
+    /* Chat input container - CRITICAL FIX */
     .stChatFloatingInputContainer {
         background-color: white !important;
-        border: 2px solid #667eea;
-        border-radius: 15px;
-        padding: 10px;
+        border: 2px solid #667eea !important;
+        border-radius: 15px !important;
+        padding: 10px !important;
+        bottom: 0 !important;
+        position: sticky !important;
+    }
+    
+    /* CRITICAL FIX: Make chat input visible */
+    .stChatInput {
+        background-color: white !important;
+    }
+    
+    .stChatInput textarea {
+        color: #1a1a1a !important;
+        background-color: white !important;
+    }
+    
+    .stChatInput input {
+        color: #1a1a1a !important;
+        background-color: white !important;
     }
     
     /* All chat messages - white background */
@@ -480,6 +528,9 @@ if "user_context" not in st.session_state:
     st.session_state.user_context = {}
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = []
+# Insurance intent flag (NEW)
+if "insurance_requested" not in st.session_state:
+    st.session_state.insurance_requested = False
 
 def extract_location_from_text(text):
     """FIXED: Smart extraction of location from natural language"""
@@ -553,7 +604,15 @@ def format_risk_summary(risk_summary, weather_analysis):
     if risks:
         risk_text += "\n### ⚠️ Detected Threats\n"
         for r, info in risks.items():
-            risk_text += f"- **{r.title()}** ({info['level']}): {info['reason']}\n"
+            # Handle both dict and other formats safely
+            if isinstance(info, dict):
+                risk_level = info.get('level', 'Unknown')
+                reason = info.get('reason', info.get('label', 'No details available'))
+                metric = info.get('metric', '')
+                risk_text += f"- **{r.title()}** ({risk_level}): {reason}\n"
+            else:
+                # If info is just a string or other type
+                risk_text += f"- **{r.title()}**: {str(info)}\n"
     else:
         risk_text += "\n### ✅ No Immediate Weather Threats Detected\n"
 
@@ -694,6 +753,16 @@ def process_user_message(user_text):
     # Extract policy mentions
     if any(word in user_text.lower() for word in ["policy", "insurance", "covered", "coverage"]):
         st.session_state.user_context['policy'] = "Standard Home Insurance"
+
+    # Detect explicit insurance intent (NEW)
+    insurance_keywords = [
+        "insurance", "policy", "coverage", "insured","benefits","advantage","advantages",
+        "claim", "premium", "plan", "yes", "yup","yeah","show", "sure","tell me"
+    ]
+    
+    if any(word in user_text.lower() for word in insurance_keywords):
+        st.session_state.insurance_requested = True
+
     
     # Store history
     if not st.session_state.user_context.get('history'):
@@ -715,27 +784,6 @@ def process_user_message(user_text):
             with st.spinner("🔍 Analyzing weather data and assessing disaster risks..."):
                 risk_result = risk_assessment_engine(user_input_obj)
             
-            # -------------------------------------------------------
-            # Insurance Recommendation Engine (NEW)
-            # -------------------------------------------------------
-            # Determine disaster context for insurance
-            disaster_from_text = extract_disaster_from_text(user_text)
-            
-            if disaster_from_text:
-                insurance_disaster = disaster_from_text
-            elif risk_result.get("weather_analysis", {}).get("risks_found"):
-                insurance_disaster = list(
-                    risk_result["weather_analysis"]["risks_found"].keys()
-                )[0]
-            else:
-                insurance_disaster = "flood"  # default fallback
-            
-            recommended_plans = get_insurance_plans(
-                insurance_disaster,
-                INSURANCE_DATA
-            )
-
-            
             # Create preparedness workflow (createWorkflow)
             plan_obj = create_preparedness_workflow(
                 location=risk_result.get("location", "Unknown"),
@@ -746,11 +794,18 @@ def process_user_message(user_text):
             # Aggregate all data
             plan_obj["risk_summary"] = risk_result.get("aggregate", {})
             plan_obj["weather_analysis"] = risk_result.get("weather_analysis", {})
-            plan_obj["recommended_insurance"] = recommended_plans  # NEW: Add insurance
             plan_obj["generated_at"] = datetime.utcnow().isoformat()
             
             # Generate natural LLM response
             response = generate_conversational_response(user_text, plan_obj=plan_obj)
+
+            # Ask insurance follow-up ONLY if user has not asked yet (NEW)
+            if not st.session_state.insurance_requested:
+                response += (
+                    "\n\n💡 *Would you like to see insurance options or policies "
+                    "that can protect you from this type of disaster?*"
+                )
+
             
             # Add risk badge for displayInformation
             risk_level = plan_obj["risk_summary"]["level"]
@@ -858,6 +913,7 @@ with st.sidebar:
             st.session_state.messages = []
             st.session_state.conversation_history = []
             st.session_state.user_context = {}
+            st.session_state.insurance_requested = False
             st.rerun()
     
     st.markdown("---")
@@ -874,55 +930,56 @@ with st.sidebar:
     """)
     
     st.markdown("---")
-
-with st.expander("💡 Quick Tips"):
-    st.markdown("""
-    **Example Queries:**
-    - "Risk in Mumbai?"
-    - "Weather for 13.34, 74.74"
-    - "Heavy rains last week"
-    - "What insurance do I need?"
-    - "Show me flood insurance"
-    """)
-
+    
+    with st.expander("💡 Quick Tips"):
+        st.markdown("""
+        **Example Queries:**
+        - "Risk in Mumbai?"
+        - "Weather for 13.34, 74.74"
+        - "Heavy rains last week"
+        - "What insurance do I need?"
+        - "Show me flood insurance"
+        """)
+    
     st.markdown("---")
     st.markdown("<p style='text-align: center; color: #ffd54f; font-size: 0.8em;'>Developed By Gouthum</p>", unsafe_allow_html=True)
 
-
+# Display chat messages
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"], unsafe_allow_html=True)
 
-
+# Welcome message
 if len(st.session_state.messages) == 0:
     with st.chat_message("assistant"):
         welcome_msg = """
-        👋 Hello! I'm your Disaster Preparedness AI Assistant.
-        I'm here to help you understand and prepare for weather-related disasters in your area. 
-        I can analyze real-time weather data, assess risks, create personalized emergency preparedness plans, and recommend appropriate insurance coverage.
-        
-        **Here's what I do:**
-        - Fetch live weather data from trusted sources
-        - Assess disaster risks specific to your location  
-        - Identify threats like floods, storms, heatwaves, and more
-        - Create customized preparedness plans
-        - Recommend insurance plans based on your risks
-        - Guide you on insurance coverage
-        
-        **Let's get started!** Just tell me where you're located, and I'll check the current risks in your area.
-        
-        For example, you could say:
-        - *"I live in Mumbai, what are the current risks?"*
-        - *"Check weather for Udupi"*
-        - *"We had flooding last month, what insurance do I need?"*
-        - *"Show me insurance options for storms"*
-        
-        I'm ready when you are! 🛡️
+👋 Hello! I'm your Disaster Preparedness AI Assistant.
+
+I'm here to help you understand and prepare for weather-related disasters in your area. 
+I can analyze real-time weather data, assess risks, create personalized emergency preparedness plans, and recommend appropriate insurance coverage.
+
+**Here's what I do:**
+- Fetch live weather data from trusted sources
+- Assess disaster risks specific to your location  
+- Identify threats like floods, storms, heatwaves, and more
+- Create customized preparedness plans
+- Recommend insurance plans based on your risks
+- Guide you on insurance coverage
+
+**Let's get started!** Just tell me where you're located, and I'll check the current risks in your area.
+
+For example, you could say:
+- *"I live in Mumbai, what are the current risks?"*
+- *"Check weather for Udupi"*
+- *"We had flooding last month, what insurance do I need?"*
+- *"Show me insurance options for storms"*
+
+I'm ready when you are! 🛡️
         """
         st.markdown(welcome_msg)
         st.session_state.messages.append({"role": "assistant", "content": welcome_msg})
 
-
+# Chat input
 if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, or emergency preparedness..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.session_state.conversation_history.append({"role": "user", "content": prompt})
@@ -936,6 +993,79 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
         
         st.markdown(response, unsafe_allow_html=True)
         
+        # Show insurance plans directly in chat if user requested them
+        if st.session_state.insurance_requested and plan_obj:
+            insurance_disaster = extract_disaster_from_text(prompt)
+            
+            # If no disaster in prompt, check the location history
+            if not insurance_disaster and st.session_state.user_context.get('history'):
+                insurance_disaster = extract_disaster_from_text(
+                    st.session_state.user_context.get('history', '')
+                )
+            
+            # If still nothing, check risks_found from weather analysis
+            if not insurance_disaster:
+                risks = plan_obj["weather_analysis"].get("risks_found", {})
+                if risks:
+                    # Use the first detected risk
+                    insurance_disaster = list(risks.keys())[0]
+                    print(f"🔍 Using risk from weather analysis: '{insurance_disaster}'")
+            
+            # Final fallback to flood
+            if not insurance_disaster:
+                insurance_disaster = "flood"
+                print(f"⚠️ No disaster detected, defaulting to: 'flood'")
+            
+            print(f"🎯 Final disaster type for insurance: '{insurance_disaster}'")
+            
+            recommended_plans = get_insurance_plans(
+                insurance_disaster,
+                INSURANCE_DATA
+            )
+            
+            print(f"📋 Retrieved {len(recommended_plans)} insurance plans")
+            
+            if recommended_plans:
+                st.markdown("---")
+                st.markdown(f"## 🏦 Recommended Insurance Plans for {insurance_disaster.title()}")
+                
+                for plan in recommended_plans:
+                    policy_details = plan.get("policy_details", {})
+                    
+                    policy_explanation = (
+                        plan.get("policy_explanation")
+                        or "No explanation provided"
+                    )
+                    
+                    why_choose = plan.get("why_choose_this_plan", "")
+                    
+                    st.markdown(f"""
+<div class="insurance-card">
+
+### 🛡️ {plan.get('plan_name', 'N/A')}
+
+**Best for:** {plan.get('best_for', 'N/A')}
+
+**💰 Premium:** {policy_details.get('premium', 'N/A')}  
+**🛡️ Coverage:** {policy_details.get('coverage_amount', 'N/A')}  
+**⏳ Duration:** {policy_details.get('policy_duration', 'N/A')}  
+**⏰ Waiting Period:** {policy_details.get('waiting_period', 'N/A')}
+
+**📘 Policy Explanation:**  
+{policy_explanation}
+
+**⭐ Why choose this plan?**  
+{why_choose}
+
+</div>
+""", unsafe_allow_html=True)
+            else:
+                st.warning(f"⚠️ No insurance plans found for '{insurance_disaster}'. Please check your JSON file structure.")
+                st.info(
+                    "💡 Standard home insurance may provide basic coverage. "
+                    "Contact your insurance provider for specific disaster coverage."
+                )
+        
         if plan_obj:
             with st.expander("📊 View Complete Risk Assessment & Preparedness Plan"):
                 col1, col2 = st.columns(2)
@@ -948,69 +1078,73 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                         ),
                         unsafe_allow_html=True
                     )
-
                 
                 with col2:
                     st.markdown("**📋 Your Preparedness Plan**")
                     for i, step in enumerate(plan_obj["plan"], 1):
                         st.markdown(f"**{i}.** {step}")
                 
-                if plan_obj.get("recommended_insurance"):
-                    st.markdown("---")
-                    st.markdown("## 🏦 Recommended Insurance Plans")
-                
-                    for plan in plan_obj["recommended_insurance"]:
-                        policy_details = plan.get("policy_details", {})
-                
-                        policy_explanation = (
-                            policy_details.get("policy_explanation")
-                            or plan.get("policy_explanation")
-                            or "No explanation provided"
+                # Show insurance ONLY when user explicitly requested
+                if st.session_state.insurance_requested:
+                    insurance_disaster = extract_disaster_from_text(prompt)
+                    
+                    if not insurance_disaster:
+                        insurance_disaster = (
+                            list(plan_obj["weather_analysis"].get("risks_found", {}).keys())[0]
+                            if plan_obj["weather_analysis"].get("risks_found")
+                            else "flood"
+                        )
+                    
+                    recommended_plans = get_insurance_plans(
+                        insurance_disaster,
+                        INSURANCE_DATA
+                    )
+                    
+                    if recommended_plans:
+                        st.markdown("---")
+                        st.markdown("## 🏦 Recommended Insurance Plans")
+                        
+                        for plan in recommended_plans:
+                            policy_details = plan.get("policy_details", {})
+                            
+                            policy_explanation = (
+                                plan.get("policy_explanation")
+                                or "No explanation provided"
+                            )
+                            
+                            why_choose = plan.get("why_choose_this_plan", "")
+                            
+                            st.markdown(f"""
+### 🛡️ {plan.get('plan_name', 'N/A')}
+
+**Best for:**  
+{plan.get('best_for', 'N/A')}
+
+**💰 Premium:**  
+{policy_details.get('premium', 'N/A')}
+
+**🛡️ Coverage:**  
+{policy_details.get('coverage_amount', 'N/A')}
+
+**⏳ Duration:**  
+{policy_details.get('policy_duration', 'N/A')}
+
+**⏰ Waiting Period:**  
+{policy_details.get('waiting_period', 'N/A')}
+
+**📘 Policy Explanation:**  
+{policy_explanation}
+
+**⭐ Why choose this plan?**  
+{why_choose}
+""")
+                    else:
+                        st.info(
+                            "💡 No specific insurance plans found for the detected risks. "
+                            "Standard home insurance may provide basic coverage."
                         )
                 
-                        why_choose = plan.get("why_choose_this_plan", [])
-                
-                        st.markdown(f"""
-                ### 🛡️ {plan.get('plan_name', 'N/A')}
-                
-                **Best for:**  
-                {plan.get('best_for', 'N/A')}
-                
-                **💰 Policy Cost:**  
-                {policy_details.get('policy_cost', 'N/A')}
-                
-                **🛡️ Coverage:**  
-                {policy_details.get('coverage_amount', 'N/A')}
-                
-                **⏳ Duration:**  
-                {policy_details.get('policy_duration', 'N/A')}
-                
-                **⏰ Waiting Period:**  
-                {policy_details.get('waiting_period', 'N/A')}
-                
-                **📘 Policy Explanation:**  
-                {policy_explanation}
-                
-                **⭐ Why choose this plan?**
-                """)
-                
-                        if isinstance(why_choose, list) and why_choose:
-                            for reason in why_choose:
-                                st.markdown(f"- {reason}")
-                        elif isinstance(why_choose, str) and why_choose:
-                            st.markdown(f"- {why_choose}")
-                        else:
-                            st.markdown("- Not specified")
-                
-                else:
-                    st.info(
-                        "💡 No specific insurance plans found for the detected risks. "
-                        "Standard home insurance may provide basic coverage."
-                    )
-
-
-
-                
+                # Download option
                 st.markdown("---")
                 st.download_button(
                     label="📥 Download Full Report (JSON)",
