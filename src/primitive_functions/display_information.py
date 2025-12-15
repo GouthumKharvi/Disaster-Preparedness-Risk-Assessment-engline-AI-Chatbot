@@ -25,3 +25,4 @@ def display_plan(plan_obj):
         print(f"{i}. {step}")
 
     print("\n(End of Plan)\n")
+ 
