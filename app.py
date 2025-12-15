@@ -526,6 +526,40 @@ def extract_location_from_text(text):
     
     return None
 
+# -------------------------------------------------------
+# Risk Summary Formatter (Human-friendly display)
+# -------------------------------------------------------
+def format_risk_summary(risk_summary, weather_analysis):
+    level = risk_summary.get("level", "Unknown")
+    score = risk_summary.get("score", 0)
+
+    precip = weather_analysis.get("max_precip_mm", 0)
+    temp = weather_analysis.get("max_temp_c", "N/A")
+    wind = weather_analysis.get("max_wind_ms", "N/A")
+    risks = weather_analysis.get("risks_found", {})
+
+    risk_text = f"""
+### 🎯 Overall Risk Assessment
+
+**Risk Level:** {level}  
+**Risk Score:** {score}
+
+### 🌦️ Current Weather Indicators
+- 🌧️ **Max Rainfall:** {precip} mm  
+- 🌡️ **Max Temperature:** {temp} °C  
+- 💨 **Max Wind Speed:** {wind} m/s  
+"""
+
+    if risks:
+        risk_text += "\n### ⚠️ Detected Threats\n"
+        for r, info in risks.items():
+            risk_text += f"- **{r.title()}** ({info['level']}): {info['reason']}\n"
+    else:
+        risk_text += "\n### ✅ No Immediate Weather Threats Detected\n"
+
+    return risk_text
+
+
 def generate_conversational_response(user_message, plan_obj=None, has_location=False):
     """Generate natural, varied conversational response using Groq LLM"""
     if not LLM_AVAILABLE or not groq_client:
@@ -907,11 +941,14 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                 col1, col2 = st.columns(2)
                 
                 with col1:
-                    st.markdown("**🎯 Risk Summary**")
-                    st.json(plan_obj["risk_summary"])
-                    
-                    st.markdown("**🌡️ Weather Analysis**")
-                    st.json(plan_obj["weather_analysis"])
+                    st.markdown(
+                        format_risk_summary(
+                            plan_obj["risk_summary"],
+                            plan_obj["weather_analysis"]
+                        ),
+                        unsafe_allow_html=True
+                    )
+
                 
                 with col2:
                     st.markdown("**📋 Your Preparedness Plan**")
