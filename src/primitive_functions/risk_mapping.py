@@ -7,22 +7,42 @@ risk_mapping = {
     },
     "storm": {
         "threshold": {"wind_speed_ms": 15},
-        "label": "Storm Risk"
+        "label": "Storm / Cyclone Risk"
     },
     "heatwave": {
         "threshold": {"temperature_c": 40},
         "label": "Heatwave Risk"
     },
-    "landslide": {
-        "threshold": {"precipitation_sum_mm": 80},
-        "label": "Landslide Risk"
-    },
-    "lightning": {
-        "threshold": {"wind_speed_ms": 20},
-        "label": "Lightning & Thunderstorm Risk"
-    },
-    "coldwave": {
+    "cold_wave": {
         "threshold": {"temperature_c_min": 5},
         "label": "Cold Wave Risk"
+    },
+    "hailstorm": {
+        "threshold": {"wind_speed_ms": 20},
+        "label": "Hailstorm Risk"
+    },
+    "drought": {
+        "threshold": {"precipitation_sum_mm": 10},
+        "label": "Drought Risk"
+    },
+    "cyclone": {
+        "threshold": {"wind_speed_ms": 25},
+        "label": "Cyclone Risk"
+    },
+    "tsunami": {
+        "threshold": {},
+        "label": "Tsunami Risk"
+    },
+    "pandemic": {
+        "threshold": {},
+        "label": "Pandemic Risk"
+    },
+    "volcanic_eruption": {
+        "threshold": {},
+        "label": "Volcanic Eruption Risk"
+    },
+    "tornado": {
+        "threshold": {"wind_speed_ms": 30},
+        "label": "Tornado Risk"
     }
 }
