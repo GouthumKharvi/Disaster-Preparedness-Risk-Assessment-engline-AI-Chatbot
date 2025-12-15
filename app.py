@@ -992,10 +992,10 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                     insurance_disaster,
                     INSURANCE_DATA
                 )
-                    for plan in recommended_plans:
+                for plan in recommended_plans:
 
                 
-                    if st.session_state.insurance_requested:
+                if st.session_state.insurance_requested:
                     st.markdown("---")
                     st.markdown("## 🏦 Recommended Insurance Plans")
                 
