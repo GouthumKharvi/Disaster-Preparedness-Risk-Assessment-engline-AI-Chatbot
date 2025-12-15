@@ -1,0 +1,2988 @@
+{
+  "flood": {
+    "disaster_type": "Flood (Short-Term Urban Flooding Risk)",
+    "insurance_plans": [
+      {
+        "plan_id": 1,
+        "plan_name": "Flood Damage Basic Cover",
+        "policy_explanation": "Flood Damage Basic Cover is a short-term insurance plan designed to provide essential financial protection during minor flood events. It focuses on covering basic structural and electrical damage caused by sudden waterlogging or drainage overflow. This plan does not include coverage for household contents, making it suitable for rented homes or properties with limited assets. The coverage period is intentionally short to address immediate flood risks. It helps reduce out-of-pocket expenses for basic repairs and cleanup. This plan is ideal when flood exposure is temporary and financial risk is relatively low.",
+        "best_for": "Tenants or households requiring minimal flood protection",
+        "policy_details": {
+          "policy_cost": "₹850 – ₹1,100",
+          "coverage_amount": "Up to ₹3 Lakhs",
+          "policy_duration": "15 days",
+          "waiting_period": "48 hours"
+        },
+        "covers": [
+          "Basic structural damage (walls, flooring)",
+          "Limited electrical damage",
+          "Basic cleanup costs"
+        ],
+        "not_covered": [
+          "Household appliances",
+          "Furniture and personal belongings",
+          "Temporary accommodation",
+          "Vehicle damage"
+        ],
+        "why_choose_this_plan": "Suitable for short-term flood exposure with limited assets and lower financial risk"
+      },
+      {
+        "plan_id": 2,
+        "plan_name": "Flood Protection Standard Cover",
+        "policy_explanation": "Flood Protection Standard Cover offers a balanced level of protection for households with essential appliances and basic furniture. It extends coverage beyond structural damage to include electrical systems and commonly used household appliances. This plan is structured for families living in urban areas where flooding may cause moderate losses. The 30-day duration allows sufficient time for recovery and repairs after a flood event. It provides better financial security than basic plans while remaining cost-effective. This plan is suitable for users seeking practical protection without high policy_costs.",
+        "best_for": "Families with essential household appliances and furniture",
+        "policy_details": {
+          "policy_cost": "₹1,400 – ₹1,700",
+          "coverage_amount": "Up to ₹6 Lakhs",
+          "policy_duration": "30 days",
+          "waiting_period": "36 hours"
+        },
+        "covers": [
+          "Structural damage",
+          "Electrical wiring and switchboards",
+          "Essential household appliances",
+          "Cleanup and sanitation expenses"
+        ],
+        "not_covered": [
+          "Extended temporary accommodation",
+          "High-value electronics unless declared",
+          "Vehicle damage"
+        ],
+        "why_choose_this_plan": "Offers balanced protection for common flood-related losses at a moderate cost"
+      },
+      {
+        "plan_id": 3,
+        "plan_name": "Flood Protection Comprehensive Cover",
+        "policy_explanation": "Flood Protection Comprehensive Cover is designed for homeowners and ground-floor residents facing higher flood exposure. It provides extensive protection covering both the structure and household contents. The plan also includes temporary accommodation support, helping families manage displacement during repairs. With a longer coverage period and reduced waiting time, it ensures quicker financial relief. This plan addresses both immediate damage and short-term recovery needs. It is ideal for users seeking complete protection during severe flood situations.",
+        "best_for": "Homeowners or ground-floor residents with higher exposure to flood damage",
+        "policy_details": {
+          "policy_cost": "₹2,200 – ₹2,800",
+          "coverage_amount": "Up to ₹12 Lakhs",
+          "policy_duration": "60 days",
+          "waiting_period": "24 hours"
+        },
+        "covers": [
+          "Full structural damage",
+          "Household appliances and furniture",
+          "Temporary accommodation (up to 10 days)",
+          "Cleanup and minor repair costs"
+        ],
+        "not_covered": [
+          "Luxury items unless declared",
+          "Damage due to unauthorized construction"
+        ],
+        "why_choose_this_plan": "Designed for comprehensive financial protection during and after flood events"
+      },
+      {
+        "plan_id": 4,
+        "plan_name": "Flood Protection Super Comprehensive Cover",
+        "policy_explanation": "Flood Protection Super Comprehensive Cover provides the highest level of flood risk protection for high-value properties. It covers structural damage, household contents, electronics, and even vehicle-related flood losses. The plan includes extended temporary accommodation and emergency repair assistance for faster recovery. With the shortest waiting period and longest coverage duration, it ensures immediate and long-term support. This plan is suitable for flood-prone zones where financial exposure is high. It offers maximum peace of mind during severe flood events.",
+        "best_for": "High-value properties or households seeking maximum flood risk protection",
+        "policy_details": {
+          "policy_cost": "₹3,800 – ₹4,500",
+          "coverage_amount": "Up to ₹20 Lakhs",
+          "policy_duration": "90 days",
+          "waiting_period": "12 hours"
+        },
+        "covers": [
+          "Structural and interior damage",
+          "All household contents and electronics",
+          "Temporary accommodation (up to 30 days)",
+          "Emergency repair assistance",
+          "Flood damage to private vehicles"
+        ],
+        "not_covered": [
+          "Loss caused by intentional negligence",
+          "Undeclared high-value assets"
+        ],
+        "why_choose_this_plan": "Provides the highest level of protection, fastest activation, and extended recovery support"
+      }
+    ],
+    "plan_comparison_summary": [
+      {
+        "plan_name": "Flood Damage Basic Cover",
+        "policy_cost": "₹850–₹1,100",
+        "coverage": "₹3 Lakhs",
+        "duration": "15 days",
+        "waiting_period": "48 hours"
+      },
+      {
+        "plan_name": "Flood Protection Standard Cover",
+        "policy_cost": "₹1,400–₹1,700",
+        "coverage": "₹6 Lakhs",
+        "duration": "30 days",
+        "waiting_period": "36 hours"
+      },
+      {
+        "plan_name": "Flood Protection Comprehensive Cover",
+        "policy_cost": "₹2,200–₹2,800",
+        "coverage": "₹12 Lakhs",
+        "duration": "60 days",
+        "waiting_period": "24 hours"
+      },
+      {
+        "plan_name": "Flood Protection Super Comprehensive Cover",
+        "policy_cost": "₹3,800–₹4,500",
+        "coverage": "₹20 Lakhs",
+        "duration": "90 days",
+        "waiting_period": "12 hours"
+      }
+    ]
+  }
+,
+  "thunderstorm": {
+  "disaster_type": "Thunderstorm (Lightning, Heavy Rain & Wind Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Thunderstorm Basic Property Cover",
+      "policy_explanation": "Thunderstorm Basic Property Cover is designed to provide short-term financial protection against minor damage caused by thunderstorms. It covers losses resulting from heavy rain, lightning strikes, and moderate winds. The plan focuses on essential structural and electrical repairs. It excludes household contents to keep the policy affordable. The short policy duration makes it suitable for temporary weather disturbances. It helps reduce sudden repair expenses after minor storms. This plan is ideal for locations with low to moderate thunderstorm frequency.",
+      "best_for": "Tenants and low-risk households",
+      "policy_details": {
+        "policy_cost": "₹600 – ₹800",
+        "coverage_amount": "Up to ₹2 Lakhs",
+        "policy_duration": "15 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage",
+        "Wall cracks due to heavy rain",
+        "Lightning-related electrical damage",
+        "Basic wiring repairs",
+        "Water seepage damage",
+        "Broken windows",
+        "Temporary weather-related damage",
+        "Basic cleanup expenses"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Temporary accommodation",
+        "Vehicle damage",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Low-cost short-term protection",
+        "Ideal for minor thunderstorms",
+        "Quick financial relief for repairs",
+        "Simple coverage structure",
+        "Affordable for tenants",
+        "Minimal documentation required",
+        "Short waiting period",
+        "Suitable for seasonal storms"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Thunderstorm Standard Home Cover",
+      "policy_explanation": "Thunderstorm Standard Home Cover provides balanced protection against moderate thunderstorm-related damage. It extends coverage to include electrical systems and roof damage. The policy is designed for urban households facing seasonal storms. The longer duration allows sufficient time for repairs. It offers better coverage than basic plans while remaining affordable. The plan helps manage repair and cleanup expenses effectively. Suitable for families with essential household assets.",
+      "best_for": "Urban families",
+      "policy_details": {
+        "policy_cost": "₹1,100 – ₹1,400",
+        "coverage_amount": "Up to ₹4 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage",
+        "Roof leakage and damage",
+        "Electrical wiring damage",
+        "Switchboard and fuse damage",
+        "Water damage from rain",
+        "Basic household appliances",
+        "Cleanup costs",
+        "Minor interior repairs"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Vehicle damage",
+        "Extended accommodation",
+        "Intentional negligence",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and cost",
+        "Suitable for urban homes",
+        "Covers electrical systems",
+        "Moderate premium range",
+        "Longer recovery window",
+        "Better protection than basic plans",
+        "Ideal for seasonal storms",
+        "Reliable short-term coverage"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Thunderstorm Comprehensive Cover",
+      "policy_explanation": "Thunderstorm Comprehensive Cover offers extensive protection against severe thunderstorm damage. It covers both structural damage and household contents. The plan includes cleanup and repair support. The longer policy duration supports proper recovery. It significantly reduces financial stress after intense storms. Designed for households with higher asset exposure. Suitable for homeowners in storm-prone areas.",
+      "best_for": "Homeowners",
+      "policy_details": {
+        "policy_cost": "₹2,000 – ₹2,500",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "45 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Structural damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical systems",
+        "Interior water damage",
+        "Cleanup and debris removal",
+        "Minor repair costs",
+        "Emergency electrical repairs"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Vehicle flood damage",
+        "Unauthorized construction damage",
+        "Commercial losses",
+        "Intentional damage"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive asset protection",
+        "Reduced financial burden",
+        "Covers household contents",
+        "Longer coverage duration",
+        "Quick claim processing",
+        "Ideal for homeowners",
+        "Better storm resilience",
+        "Higher coverage limits"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Thunderstorm Super Protection Cover",
+      "policy_explanation": "This plan provides advanced protection against frequent and severe thunderstorms. It includes interior damage and temporary accommodation support. The reduced waiting period ensures faster claims. The plan is suitable for high-risk regions. It supports both immediate repairs and recovery needs. The coverage is designed for repeated storm exposure. Ideal for properties with higher financial risk.",
+      "best_for": "High-risk residential areas",
+      "policy_details": {
+        "policy_cost": "₹3,200 – ₹3,800",
+        "coverage_amount": "Up to ₹14 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "18 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Interior damage",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repairs",
+        "Electrical system replacement",
+        "Debris clearance",
+        "Storm impact restoration"
+      ],
+      "not_covered": [
+        "Negligence-related damage",
+        "Undeclared valuables",
+        "Commercial losses",
+        "Long-term displacement",
+        "Illegal constructions"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Ideal for storm-prone zones",
+        "Covers accommodation costs",
+        "Extended recovery support",
+        "Reduced waiting period",
+        "Comprehensive storm protection",
+        "Peace of mind during severe weather"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Thunderstorm Super Comprehensive Cover",
+      "policy_explanation": "Thunderstorm Super Comprehensive Cover provides maximum protection against extreme thunderstorm damage. It covers property, contents, and emergency services. The longest coverage duration ensures full recovery. Immediate activation allows rapid financial support. Designed for regions with frequent extreme weather. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "High-value property owners",
+      "policy_details": {
+        "policy_cost": "₹4,800 – ₹5,500",
+        "coverage_amount": "Up to ₹22 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Storm debris cleanup",
+        "Lightning damage"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum coverage protection",
+        "Fastest activation",
+        "High-value asset security",
+        "Extended recovery support",
+        "Ideal for extreme weather zones",
+        "Covers all major losses",
+        "Long policy duration",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Thunderstorm Basic Property Cover",
+      "policy_cost": "₹600–₹800",
+      "coverage": "₹2 Lakhs",
+      "duration": "15 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Thunderstorm Standard Home Cover",
+      "policy_cost": "₹1,100–₹1,400",
+      "coverage": "₹4 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Thunderstorm Comprehensive Cover",
+      "policy_cost": "₹2,000–₹2,500",
+      "coverage": "₹8 Lakhs",
+      "duration": "45 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Thunderstorm Super Protection Cover",
+      "policy_cost": "₹3,200–₹3,800",
+      "coverage": "₹14 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "18 hours"
+    },
+    {
+      "plan_name": "Thunderstorm Super Comprehensive Cover",
+      "policy_cost": "₹4,800–₹5,500",
+      "coverage": "₹22 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "12 hours"
+    }
+  ]
+}
+,
+    "heatwave": {
+  "disaster_type": "Heatwave (Extreme Heat Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Heatwave Basic Health Cover",
+      "policy_explanation": "Heatwave Basic Health Cover is designed to provide short-term medical protection during mild heatwave conditions. It covers basic treatment costs related to heat exhaustion and dehydration. The policy focuses on essential healthcare needs only. It is affordable and event-specific in nature. The short policy duration makes it suitable for temporary heat spikes. It helps reduce sudden out-of-pocket medical expenses. This plan is ideal for individuals facing low to moderate heat exposure.",
+      "best_for": "Individuals",
+      "policy_details": {
+        "policy_cost": "₹500 – ₹700",
+        "coverage_amount": "Up to ₹1.5 Lakhs",
+        "policy_duration": "20 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Medical consultation",
+        "Treatment for dehydration",
+        "Heat exhaustion treatment",
+        "Emergency outpatient care",
+        "Basic diagnostic tests",
+        "Short-term hospitalization",
+        "Doctor fees",
+        "Emergency medical support"
+      ],
+      "not_covered": [
+        "Chronic illnesses",
+        "Non-heat-related treatment",
+        "Cosmetic procedures",
+        "Long-term hospitalization",
+        "Pre-existing conditions"
+      ],
+      "why_choose_this_plan": [
+        "Low-cost health protection",
+        "Ideal for short heatwaves",
+        "Quick medical financial support",
+        "Affordable for individuals",
+        "Simple coverage structure",
+        "Minimal documentation",
+        "Short waiting period",
+        "Suitable for mild heat exposure"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Heatwave Standard Health Cover",
+      "policy_explanation": "Heatwave Standard Health Cover offers balanced medical protection during moderate heatwave conditions. It covers hospitalization and emergency care caused by heat-related illnesses. The policy provides better coverage than basic plans. It is designed for urban populations facing prolonged heat exposure. The coverage duration allows sufficient recovery time. It helps reduce financial stress due to medical emergencies. Suitable for individuals and small families.",
+      "best_for": "Urban residents",
+      "policy_details": {
+        "policy_cost": "₹900 – ₹1,200",
+        "coverage_amount": "Up to ₹3 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Hospitalization expenses",
+        "Emergency room charges",
+        "Heatstroke treatment",
+        "Medical investigations",
+        "Doctor consultation fees",
+        "Ambulance charges",
+        "Medication costs",
+        "Post-treatment follow-up"
+      ],
+      "not_covered": [
+        "Non-heat-related illness",
+        "Cosmetic treatments",
+        "Elective procedures",
+        "Alternative therapies",
+        "Pre-existing diseases"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and cost",
+        "Covers hospitalization",
+        "Suitable for urban heatwaves",
+        "Better protection than basic plans",
+        "Quick claim settlement",
+        "Affordable premium range",
+        "Reliable short-term coverage",
+        "Peace of mind during heatwaves"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Heatwave Comprehensive Health Cover",
+      "policy_explanation": "Heatwave Comprehensive Health Cover provides extensive medical protection during severe heatwave conditions. It includes coverage for ICU treatment and advanced medical care. The longer policy duration supports extended recovery. It significantly reduces financial burden during critical health emergencies. Designed for high-risk individuals. The plan ensures timely medical assistance. Ideal for elderly individuals and those with higher exposure to extreme heat.",
+      "best_for": "Elderly and high-risk individuals",
+      "policy_details": {
+        "policy_cost": "₹1,800 – ₹2,200",
+        "coverage_amount": "Up to ₹6 Lakhs",
+        "policy_duration": "45 days",
+        "waiting_period": "18 hours"
+      },
+      "covers": [
+        "ICU treatment",
+        "Advanced hospitalization",
+        "Severe heatstroke care",
+        "Specialist consultation",
+        "Diagnostic imaging",
+        "Emergency medications",
+        "Nursing care",
+        "Post-hospital recovery care"
+      ],
+      "not_covered": [
+        "Non-emergency procedures",
+        "Cosmetic surgeries",
+        "Experimental treatments",
+        "Alternative medicine",
+        "Pre-existing chronic illness"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive medical protection",
+        "ICU coverage included",
+        "Higher coverage limit",
+        "Reduced waiting period",
+        "Ideal for high-risk individuals",
+        "Extended recovery support",
+        "Financial security during emergencies",
+        "Reliable health protection"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Heatwave Super Protection Cover",
+      "policy_explanation": "Heatwave Super Protection Cover provides advanced health and financial protection during prolonged heatwaves. It includes hospitalization, income loss support, and emergency cooling assistance. The policy is designed for working professionals exposed to extreme heat. Faster claim processing ensures immediate financial relief. The coverage duration supports longer recovery. It helps maintain financial stability during medical emergencies. Suitable for severe heatwave conditions.",
+      "best_for": "Working professionals",
+      "policy_details": {
+        "policy_cost": "₹3,000 – ₹3,800",
+        "coverage_amount": "Up to ₹10 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Hospitalization costs",
+        "Income loss compensation",
+        "Emergency cooling support",
+        "ICU treatment",
+        "Ambulance services",
+        "Medical consultations",
+        "Prescription medicines",
+        "Post-treatment rehabilitation"
+      ],
+      "not_covered": [
+        "Elective treatments",
+        "Cosmetic care",
+        "Non-heat illnesses",
+        "Alternative therapies",
+        "Policy violations"
+      ],
+      "why_choose_this_plan": [
+        "Income protection included",
+        "Fast claim activation",
+        "High coverage limits",
+        "Ideal for professionals",
+        "Extended medical coverage",
+        "Reduced waiting period",
+        "Strong financial backup",
+        "Complete heatwave protection"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Heatwave Super Comprehensive Cover",
+      "policy_explanation": "Heatwave Super Comprehensive Cover offers maximum health and financial protection during extreme heat emergencies. It covers advanced medical treatment and extended care. The longest policy duration ensures complete recovery support. Immediate activation provides rapid assistance. Designed for families facing severe climate conditions. It minimizes long-term financial impact. Ideal for maximum safety and peace of mind.",
+      "best_for": "Families seeking maximum protection",
+      "policy_details": {
+        "policy_cost": "₹4,500 – ₹5,500",
+        "coverage_amount": "Up to ₹18 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "8 hours"
+      },
+      "covers": [
+        "Advanced hospitalization",
+        "ICU and critical care",
+        "Extended medical treatment",
+        "Family coverage benefits",
+        "Emergency medical evacuation",
+        "Specialist consultations",
+        "High-cost medications",
+        "Long-term recovery care"
+      ],
+      "not_covered": [
+        "Intentional negligence",
+        "Cosmetic procedures",
+        "Non-medical expenses",
+        "Experimental treatments",
+        "Policy breaches"
+      ],
+      "why_choose_this_plan": [
+        "Maximum coverage protection",
+        "Fastest waiting period",
+        "High-value medical security",
+        "Extended recovery support",
+        "Ideal for extreme heatwaves",
+        "Family-wide protection",
+        "Comprehensive medical care",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Heatwave Basic Health Cover",
+      "policy_cost": "₹500–₹700",
+      "coverage": "₹1.5 Lakhs",
+      "duration": "20 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Heatwave Standard Health Cover",
+      "policy_cost": "₹900–₹1,200",
+      "coverage": "₹3 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Heatwave Comprehensive Health Cover",
+      "policy_cost": "₹1,800–₹2,200",
+      "coverage": "₹6 Lakhs",
+      "duration": "45 days",
+      "waiting_period": "18 hours"
+    },
+    {
+      "plan_name": "Heatwave Super Protection Cover",
+      "policy_cost": "₹3,000–₹3,800",
+      "coverage": "₹10 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Heatwave Super Comprehensive Cover",
+      "policy_cost": "₹4,500–₹5,500",
+      "coverage": "₹18 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "8 hours"
+    }
+  ]
+}
+,
+    "winter_storm": {
+  "disaster_type": "Winter Storm (Snow, Ice & Power Outage Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Winter Storm Basic Property Cover",
+      "policy_explanation": "Winter Storm Basic Property Cover is designed to provide short-term financial protection against minor damage caused by snow and ice. It focuses on essential repairs resulting from light snowfall and freezing conditions. The plan covers basic structural issues and limited electrical damage. It excludes household contents to keep the policy affordable. The short coverage duration makes it suitable for temporary winter disruptions. It helps reduce sudden repair and cleanup expenses. This plan is ideal for regions with mild winter conditions and lower risk exposure.",
+      "best_for": "Low-risk households",
+      "policy_details": {
+        "policy_cost": "₹800 – ₹1,000",
+        "coverage_amount": "Up to ₹3 Lakhs",
+        "policy_duration": "20 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage due to snow",
+        "Wall cracks caused by freezing",
+        "Ice-related exterior damage",
+        "Basic electrical damage",
+        "Burst pipe repairs (minor)",
+        "Snow removal and cleanup",
+        "Temporary weather-related damage",
+        "Essential repair costs"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Temporary accommodation",
+        "Vehicle damage",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable short-term winter protection",
+        "Ideal for mild winter conditions",
+        "Covers essential repair needs",
+        "Low policy cost",
+        "Simple coverage structure",
+        "Suitable for tenants",
+        "Helps manage minor losses",
+        "Quick financial relief"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Winter Storm Standard Home Cover",
+      "policy_explanation": "Winter Storm Standard Home Cover provides balanced protection against moderate winter storm damage. It includes coverage for frozen pipes, heating systems, and electrical damage. The plan is designed for residential homes in cold regions. The longer policy duration allows sufficient time for repairs and recovery. It offers better coverage than basic plans while remaining cost-effective. It reduces financial stress caused by seasonal winter disruptions. Suitable for families living in colder climates.",
+      "best_for": "Families in cold regions",
+      "policy_details": {
+        "policy_cost": "₹1,500 – ₹1,900",
+        "coverage_amount": "Up to ₹6 Lakhs",
+        "policy_duration": "40 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage due to snow load",
+        "Frozen and burst pipes",
+        "Heating system damage",
+        "Electrical wiring damage",
+        "Interior water damage",
+        "Snow and ice cleanup",
+        "Basic household appliances",
+        "Minor interior repairs"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Extended temporary accommodation",
+        "Vehicle damage",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and affordability",
+        "Covers heating systems",
+        "Ideal for residential homes",
+        "Longer recovery window",
+        "Better protection than basic plans",
+        "Reliable winter coverage",
+        "Suitable for families",
+        "Reduces seasonal repair costs"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Winter Storm Comprehensive Cover",
+      "policy_explanation": "Winter Storm Comprehensive Cover offers extensive protection against severe winter storm damage. It covers both structural damage and household contents. The plan includes temporary accommodation support during major repairs. The longer coverage duration supports complete recovery. It significantly reduces financial burden during prolonged winter events. Designed for homeowners with higher asset exposure. Ideal for regions experiencing heavy snowfall and ice storms.",
+      "best_for": "Homeowners",
+      "policy_details": {
+        "policy_cost": "₹2,800 – ₹3,300",
+        "coverage_amount": "Up to ₹12 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Household appliances",
+        "Furniture and contents",
+        "Frozen plumbing systems",
+        "Heating system replacement",
+        "Temporary accommodation support",
+        "Debris and snow removal",
+        "Emergency repair services"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Vehicle accidents",
+        "Commercial property losses",
+        "Intentional damage"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive winter protection",
+        "Covers household contents",
+        "Temporary accommodation included",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for heavy snowfall regions",
+        "Strong financial security",
+        "Peace of mind during severe winters"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Winter Storm Super Protection Cover",
+      "policy_explanation": "Winter Storm Super Protection Cover provides advanced protection for high-risk winter regions. It includes extended accommodation support and emergency heating assistance. The reduced waiting period ensures faster claim processing. The plan supports both immediate damage repair and recovery needs. It is designed for areas experiencing prolonged snowstorms. The coverage duration allows extended support. Suitable for properties with high winter exposure.",
+      "best_for": "High-risk winter regions",
+      "policy_details": {
+        "policy_cost": "₹4,000 – ₹4,800",
+        "coverage_amount": "Up to ₹18 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Extended temporary accommodation",
+        "Emergency heating support",
+        "Household contents",
+        "Electrical system replacement",
+        "Frozen pipe replacement",
+        "Snowstorm cleanup services",
+        "Emergency repair assistance"
+      ],
+      "not_covered": [
+        "Negligence-related losses",
+        "Undeclared high-value assets",
+        "Vehicle breakdowns",
+        "Illegal constructions",
+        "Commercial losses"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Extended recovery duration",
+        "Ideal for extreme winter zones",
+        "Covers accommodation costs",
+        "Emergency heating support",
+        "Comprehensive winter protection",
+        "Reliable financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Winter Storm Super Comprehensive Cover",
+      "policy_explanation": "Winter Storm Super Comprehensive Cover offers maximum protection against extreme winter storm damage. It covers property, contents, and long-term displacement support. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial relief. Designed for severe cold climates. It minimizes long-term financial impact. Ideal for maximum safety and asset protection during harsh winters.",
+      "best_for": "High-value properties in severe winter zones",
+      "policy_details": {
+        "policy_cost": "₹5,800 – ₹6,800",
+        "coverage_amount": "Up to ₹30 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Long-term temporary accommodation",
+        "Emergency heating systems",
+        "Full electrical system overhaul",
+        "Snow and ice debris removal",
+        "Disaster recovery services"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared luxury assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum winter storm protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Ideal for extreme cold climates",
+        "Covers long-term displacement",
+        "All-inclusive winter coverage",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Winter Storm Basic Property Cover",
+      "policy_cost": "₹800–₹1,000",
+      "coverage": "₹3 Lakhs",
+      "duration": "20 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Winter Storm Standard Home Cover",
+      "policy_cost": "₹1,500–₹1,900",
+      "coverage": "₹6 Lakhs",
+      "duration": "40 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Winter Storm Comprehensive Cover",
+      "policy_cost": "₹2,800–₹3,300",
+      "coverage": "₹12 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Winter Storm Super Protection Cover",
+      "policy_cost": "₹4,000–₹4,800",
+      "coverage": "₹18 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Winter Storm Super Comprehensive Cover",
+      "policy_cost": "₹5,800–₹6,800",
+      "coverage": "₹30 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+    "cold_wave": {
+  "disaster_type": "Cold Wave (Extreme Cold Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Cold Wave Basic Health Cover",
+      "policy_explanation": "Cold Wave Basic Health Cover is designed to provide short-term medical protection during mild cold wave conditions. It covers basic treatment for cold-related illnesses such as hypothermia and frost-related symptoms. The plan focuses on essential medical care only. It is event-specific and affordable in nature. The short coverage duration makes it suitable for temporary cold spells. It helps reduce sudden healthcare expenses. This plan is ideal for individuals facing low to moderate cold exposure.",
+      "best_for": "Individuals",
+      "policy_details": {
+        "policy_cost": "₹400 – ₹600",
+        "coverage_amount": "Up to ₹1 Lakh",
+        "policy_duration": "15 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Doctor consultation",
+        "Treatment for hypothermia",
+        "Cold-related infections",
+        "Emergency outpatient care",
+        "Basic diagnostic tests",
+        "Short-term hospitalization",
+        "Prescribed medications",
+        "Emergency medical assistance"
+      ],
+      "not_covered": [
+        "Chronic illnesses",
+        "Non-cold-related treatments",
+        "Cosmetic procedures",
+        "Long-term hospitalization",
+        "Pre-existing medical conditions"
+      ],
+      "why_choose_this_plan": [
+        "Low-cost medical protection",
+        "Ideal for short cold spells",
+        "Quick healthcare financial support",
+        "Affordable for individuals",
+        "Simple and clear coverage",
+        "Minimal documentation",
+        "Short waiting period",
+        "Suitable for mild cold exposure"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Cold Wave Standard Health Cover",
+      "policy_explanation": "Cold Wave Standard Health Cover provides balanced medical protection during moderate cold wave conditions. It includes hospitalization and emergency treatment due to extreme cold exposure. The plan offers better coverage than basic options. It is designed for urban populations facing seasonal cold waves. The coverage duration allows sufficient recovery time. It reduces financial stress during medical emergencies. Suitable for individuals and small families.",
+      "best_for": "Urban residents",
+      "policy_details": {
+        "policy_cost": "₹800 – ₹1,100",
+        "coverage_amount": "Up to ₹3 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Hospitalization expenses",
+        "Emergency treatment",
+        "Cold-related respiratory illness",
+        "Diagnostic investigations",
+        "Doctor consultation fees",
+        "Ambulance services",
+        "Medication costs",
+        "Post-treatment follow-up care"
+      ],
+      "not_covered": [
+        "Non-cold-related illnesses",
+        "Cosmetic treatments",
+        "Elective medical procedures",
+        "Alternative therapies",
+        "Pre-existing diseases"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and affordability",
+        "Covers hospitalization needs",
+        "Suitable for urban cold waves",
+        "Better than basic health plans",
+        "Quick claim settlement",
+        "Reliable short-term protection",
+        "Moderate policy cost",
+        "Peace of mind during cold waves"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Cold Wave Comprehensive Health Cover",
+      "policy_explanation": "Cold Wave Comprehensive Health Cover offers extensive medical protection during severe cold wave conditions. It includes advanced treatment such as ICU care and specialist consultations. The longer policy duration supports extended recovery. It significantly reduces financial burden during serious health emergencies. Designed for high-risk groups. The plan ensures timely and quality medical care. Ideal for elderly individuals and children exposed to extreme cold.",
+      "best_for": "Elderly individuals and children",
+      "policy_details": {
+        "policy_cost": "₹1,700 – ₹2,200",
+        "coverage_amount": "Up to ₹6 Lakhs",
+        "policy_duration": "45 days",
+        "waiting_period": "18 hours"
+      },
+      "covers": [
+        "ICU treatment",
+        "Advanced hospitalization",
+        "Severe hypothermia treatment",
+        "Specialist doctor consultations",
+        "Diagnostic imaging",
+        "Emergency medications",
+        "Nursing care",
+        "Post-hospital recovery care"
+      ],
+      "not_covered": [
+        "Non-emergency procedures",
+        "Cosmetic surgeries",
+        "Experimental treatments",
+        "Alternative medicine",
+        "Pre-existing chronic illnesses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive medical coverage",
+        "ICU and critical care included",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for high-risk groups",
+        "Extended recovery support",
+        "Strong financial security",
+        "Reliable cold wave protection"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Cold Wave Super Protection Cover",
+      "policy_explanation": "Cold Wave Super Protection Cover provides advanced health and shelter-related protection during prolonged cold waves. It includes medical treatment and temporary shelter assistance. The plan ensures faster claim processing with a reduced waiting period. It is designed for regions experiencing extreme cold conditions. The longer coverage duration supports full recovery. It helps maintain financial stability during emergencies. Suitable for high-risk cold wave zones.",
+      "best_for": "High-risk cold regions",
+      "policy_details": {
+        "policy_cost": "₹2,800 – ₹3,500",
+        "coverage_amount": "Up to ₹10 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Hospitalization costs",
+        "Emergency medical treatment",
+        "Temporary shelter assistance",
+        "ICU and critical care",
+        "Ambulance services",
+        "Doctor consultations",
+        "Prescription medicines",
+        "Post-treatment rehabilitation"
+      ],
+      "not_covered": [
+        "Elective treatments",
+        "Cosmetic care",
+        "Non-cold-related illnesses",
+        "Alternative therapies",
+        "Policy violations"
+      ],
+      "why_choose_this_plan": [
+        "Shelter and medical support combined",
+        "Fast claim activation",
+        "Higher coverage limits",
+        "Ideal for extreme cold zones",
+        "Extended coverage duration",
+        "Reduced waiting period",
+        "Strong financial backup",
+        "Holistic cold wave protection"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Cold Wave Super Comprehensive Cover",
+      "policy_explanation": "Cold Wave Super Comprehensive Cover offers maximum health and recovery protection during extreme cold wave emergencies. It covers advanced medical treatment, shelter support, and long-term care. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial support. Designed for families in severe cold conditions. It minimizes long-term financial impact. Ideal for maximum safety and peace of mind.",
+      "best_for": "Families in severe cold zones",
+      "policy_details": {
+        "policy_cost": "₹4,200 – ₹5,000",
+        "coverage_amount": "Up to ₹18 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Advanced hospitalization",
+        "ICU and critical care",
+        "Extended medical treatment",
+        "Family-wide coverage",
+        "Emergency shelter support",
+        "Specialist consultations",
+        "High-cost medications",
+        "Long-term recovery care"
+      ],
+      "not_covered": [
+        "Intentional negligence",
+        "Cosmetic procedures",
+        "Non-medical expenses",
+        "Experimental treatments",
+        "Policy breaches"
+      ],
+      "why_choose_this_plan": [
+        "Maximum cold wave protection",
+        "Fastest waiting period",
+        "High-value medical security",
+        "Extended recovery support",
+        "Ideal for extreme cold conditions",
+        "Family-level coverage",
+        "Comprehensive medical and shelter care",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Cold Wave Basic Health Cover",
+      "policy_cost": "₹400–₹600",
+      "coverage": "₹1 Lakh",
+      "duration": "15 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Cold Wave Standard Health Cover",
+      "policy_cost": "₹800–₹1,100",
+      "coverage": "₹3 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Cold Wave Comprehensive Health Cover",
+      "policy_cost": "₹1,700–₹2,200",
+      "coverage": "₹6 Lakhs",
+      "duration": "45 days",
+      "waiting_period": "18 hours"
+    },
+    {
+      "plan_name": "Cold Wave Super Protection Cover",
+      "policy_cost": "₹2,800–₹3,500",
+      "coverage": "₹10 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Cold Wave Super Comprehensive Cover",
+      "policy_cost": "₹4,200–₹5,000",
+      "coverage": "₹18 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+    "hailstorm": {
+  "disaster_type": "Hailstorm (Crop & Property Damage Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Hailstorm Basic Property Cover",
+      "policy_explanation": "Hailstorm Basic Property Cover is designed to provide short-term financial protection against minor damage caused by hailstorms. It covers basic repairs for roofs, windows, and exterior surfaces affected by small hailstones. The plan focuses on essential structural protection only. It excludes household contents to keep the policy affordable. The short coverage duration makes it suitable for temporary hail events. It helps reduce sudden repair and cleanup expenses. This plan is ideal for areas with low to moderate hailstorm frequency.",
+      "best_for": "Urban households",
+      "policy_details": {
+        "policy_cost": "₹700 – ₹900",
+        "coverage_amount": "Up to ₹2 Lakhs",
+        "policy_duration": "15 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage",
+        "Broken windows and glass",
+        "Exterior wall damage",
+        "Gutter and drainage damage",
+        "Fence damage",
+        "Minor water seepage",
+        "Basic cleanup costs",
+        "Temporary weather-related repairs"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Interior furniture",
+        "Vehicle damage",
+        "Temporary accommodation",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable hailstorm protection",
+        "Ideal for minor hail damage",
+        "Quick financial support for repairs",
+        "Low policy cost",
+        "Simple coverage structure",
+        "Suitable for urban homes",
+        "Short waiting period",
+        "Effective for seasonal hailstorms"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Hailstorm Standard Home Cover",
+      "policy_explanation": "Hailstorm Standard Home Cover provides balanced protection against moderate hailstorm damage. It includes coverage for exterior structures and limited interior damage. The plan supports repair and cleanup after seasonal hailstorms. The longer policy duration allows sufficient recovery time. It offers better protection than basic plans while remaining cost-effective. It reduces financial stress caused by moderate hail damage. Suitable for residential homes in hail-prone regions.",
+      "best_for": "Residential homes",
+      "policy_details": {
+        "policy_cost": "₹1,200 – ₹1,500",
+        "coverage_amount": "Up to ₹5 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Roof and exterior damage",
+        "Broken doors and windows",
+        "Water damage from hail impact",
+        "Exterior electrical fittings",
+        "Basic interior repairs",
+        "Cleanup and debris removal",
+        "Outdoor structures",
+        "Minor appliance damage"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Extended temporary accommodation",
+        "Vehicle accidents",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and cost",
+        "Better protection than basic cover",
+        "Suitable for residential homes",
+        "Covers exterior structures",
+        "Moderate policy cost",
+        "Reliable seasonal coverage",
+        "Faster claim processing",
+        "Reduces repair expenses"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Hailstorm Comprehensive Cover",
+      "policy_explanation": "Hailstorm Comprehensive Cover offers extensive protection against severe hailstorm damage. It covers both exterior and interior property damage. The plan includes cleanup and repair assistance. The longer coverage duration supports complete recovery. It significantly reduces financial burden during intense hail events. Designed for homeowners with higher asset exposure. Ideal for regions experiencing frequent hailstorms.",
+      "best_for": "Homeowners",
+      "policy_details": {
+        "policy_cost": "₹2,400 – ₹2,900",
+        "coverage_amount": "Up to ₹10 Lakhs",
+        "policy_duration": "45 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major roof damage",
+        "Interior wall damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical system damage",
+        "Water intrusion repairs",
+        "Cleanup and debris removal",
+        "Emergency repair services"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Vehicle damage",
+        "Commercial losses",
+        "Intentional damage"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive hail protection",
+        "Covers interior and exterior damage",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for severe hailstorms",
+        "Strong financial security",
+        "Suitable for homeowners",
+        "Peace of mind during storms"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Hailstorm Super Protection Cover",
+      "policy_explanation": "Hailstorm Super Protection Cover provides advanced protection for high-risk hailstorm regions. It includes coverage for vehicles and temporary accommodation. The reduced waiting period ensures faster claim settlement. The plan supports both immediate damage repair and recovery needs. It is designed for areas experiencing severe hailstorms. The extended coverage duration offers additional security. Suitable for properties with higher financial risk.",
+      "best_for": "High-risk hailstorm areas",
+      "policy_details": {
+        "policy_cost": "₹3,800 – ₹4,500",
+        "coverage_amount": "Up to ₹18 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Household contents",
+        "Vehicle hail damage",
+        "Temporary accommodation",
+        "Emergency repairs",
+        "Electrical system replacement",
+        "Debris clearance",
+        "Storm impact restoration"
+      ],
+      "not_covered": [
+        "Negligence-related damage",
+        "Undeclared valuables",
+        "Commercial vehicle losses",
+        "Illegal constructions",
+        "Business interruption"
+      ],
+      "why_choose_this_plan": [
+        "Vehicle coverage included",
+        "Fast claim activation",
+        "High coverage limits",
+        "Ideal for hail-prone zones",
+        "Covers accommodation costs",
+        "Extended recovery duration",
+        "Comprehensive storm protection",
+        "Strong financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Hailstorm Super Comprehensive Cover",
+      "policy_explanation": "Hailstorm Super Comprehensive Cover offers maximum protection against extreme hailstorm damage. It covers property, vehicles, contents, and emergency services. The longest coverage duration ensures full recovery assistance. Immediate activation allows rapid financial relief. Designed for regions with frequent extreme hail events. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "High-value property owners",
+      "policy_details": {
+        "policy_cost": "₹5,500 – ₹6,500",
+        "coverage_amount": "Up to ₹30 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Vehicle repairs",
+        "Long-term temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Storm debris cleanup",
+        "Disaster recovery services"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum hailstorm protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Vehicle and property coverage",
+        "Ideal for extreme hail events",
+        "All-inclusive storm coverage",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Hailstorm Basic Property Cover",
+      "policy_cost": "₹700–₹900",
+      "coverage": "₹2 Lakhs",
+      "duration": "15 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Hailstorm Standard Home Cover",
+      "policy_cost": "₹1,200–₹1,500",
+      "coverage": "₹5 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Hailstorm Comprehensive Cover",
+      "policy_cost": "₹2,400–₹2,900",
+      "coverage": "₹10 Lakhs",
+      "duration": "45 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Hailstorm Super Protection Cover",
+      "policy_cost": "₹3,800–₹4,500",
+      "coverage": "₹18 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Hailstorm Super Comprehensive Cover",
+      "policy_cost": "₹5,500–₹6,500",
+      "coverage": "₹30 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+   "hurricane": {
+  "disaster_type": "Hurricane (Extreme Wind & Flood Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Hurricane Basic Property Cover",
+      "policy_explanation": "Hurricane Basic Property Cover is designed to provide short-term financial protection against minor hurricane-related damage. It primarily covers damage caused by strong winds and heavy rain. The plan focuses on essential structural repairs and basic electrical damage. It excludes household contents to keep the policy affordable. The short policy duration makes it suitable for temporary hurricane exposure. It helps reduce immediate repair expenses after mild hurricanes. This plan is ideal for low-risk coastal or inland regions with occasional hurricanes.",
+      "best_for": "Tenants and low-risk households",
+      "policy_details": {
+        "policy_cost": "₹1,200 – ₹1,500",
+        "coverage_amount": "Up to ₹4 Lakhs",
+        "policy_duration": "20 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage",
+        "Wall cracks due to wind pressure",
+        "Broken windows",
+        "Rainwater seepage damage",
+        "Basic electrical damage",
+        "Fallen debris impact",
+        "Temporary weather-related damage",
+        "Basic cleanup expenses"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Vehicle damage",
+        "Temporary accommodation",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable hurricane protection",
+        "Suitable for mild hurricanes",
+        "Low policy cost",
+        "Quick financial relief",
+        "Simple coverage structure",
+        "Ideal for tenants",
+        "Short waiting period",
+        "Effective for short-term risks"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Hurricane Standard Home Cover",
+      "policy_explanation": "Hurricane Standard Home Cover offers balanced protection against moderate hurricane damage. It includes coverage for structural damage and essential electrical systems. The plan supports recovery from wind and rain-related losses. The longer policy duration allows sufficient time for repairs. It offers better protection than basic plans while remaining cost-effective. It reduces financial stress caused by moderate hurricanes. Suitable for residential homes in hurricane-prone regions.",
+      "best_for": "Residential homes",
+      "policy_details": {
+        "policy_cost": "₹2,200 – ₹2,800",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "40 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage",
+        "Roof damage",
+        "Electrical wiring issues",
+        "Water damage from heavy rain",
+        "Switchboards and fuse boxes",
+        "Cleanup and debris removal",
+        "Minor interior repairs",
+        "Outdoor structure damage"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Vehicle losses",
+        "Extended accommodation",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and affordability",
+        "Better than basic protection",
+        "Suitable for family homes",
+        "Covers structural damage",
+        "Moderate policy cost",
+        "Reliable seasonal coverage",
+        "Faster claim settlement",
+        "Reduced repair expenses"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Hurricane Comprehensive Cover",
+      "policy_explanation": "Hurricane Comprehensive Cover provides extensive protection against severe hurricane damage. It covers both structural damage and household contents. The plan includes cleanup and repair support. The longer coverage duration supports full recovery. It significantly reduces financial burden after major hurricanes. Designed for homeowners with higher asset exposure. Ideal for areas experiencing frequent or intense hurricanes.",
+      "best_for": "Homeowners",
+      "policy_details": {
+        "policy_cost": "₹3,800 – ₹4,500",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical system damage",
+        "Interior water damage",
+        "Cleanup and debris removal",
+        "Emergency repair services",
+        "Temporary power restoration"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Commercial losses",
+        "Intentional damage",
+        "Vehicle flood losses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive hurricane coverage",
+        "Covers household contents",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for severe hurricanes",
+        "Strong financial protection",
+        "Suitable for homeowners",
+        "Peace of mind during storms"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Hurricane Super Protection Cover",
+      "policy_explanation": "Hurricane Super Protection Cover is designed for high-risk coastal and hurricane-prone zones. It includes coverage for temporary accommodation and emergency repairs. The reduced waiting period ensures faster claim activation. The plan supports both immediate response and recovery needs. It is suitable for repeated hurricane exposure. The extended duration provides additional financial security. Ideal for properties with higher financial risk.",
+      "best_for": "Coastal and high-risk regions",
+      "policy_details": {
+        "policy_cost": "₹5,500 – ₹6,500",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repair services",
+        "Electrical system replacement",
+        "Debris clearance",
+        "Interior restoration",
+        "Storm impact recovery"
+      ],
+      "not_covered": [
+        "Negligence-related losses",
+        "Undeclared valuables",
+        "Commercial vehicle losses",
+        "Illegal constructions",
+        "Business interruption"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Accommodation support included",
+        "Ideal for coastal regions",
+        "Extended recovery duration",
+        "Comprehensive storm coverage",
+        "Reduced waiting period",
+        "Strong financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Hurricane Super Comprehensive Cover",
+      "policy_explanation": "Hurricane Super Comprehensive Cover offers maximum protection against extreme hurricane damage. It covers property, contents, relocation support, and emergency services. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial relief. Designed for regions with frequent extreme hurricanes. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "High-value coastal properties",
+      "policy_details": {
+        "policy_cost": "₹7,800 – ₹9,000",
+        "coverage_amount": "Up to ₹45 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Long-term temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Storm debris cleanup",
+        "Relocation and recovery support"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum hurricane protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Ideal for extreme hurricane zones",
+        "All-inclusive coverage",
+        "High-value asset security",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Hurricane Basic Property Cover",
+      "policy_cost": "₹1,200–₹1,500",
+      "coverage": "₹4 Lakhs",
+      "duration": "20 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Hurricane Standard Home Cover",
+      "policy_cost": "₹2,200–₹2,800",
+      "coverage": "₹8 Lakhs",
+      "duration": "40 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Hurricane Comprehensive Cover",
+      "policy_cost": "₹3,800–₹4,500",
+      "coverage": "₹15 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Hurricane Super Protection Cover",
+      "policy_cost": "₹5,500–₹6,500",
+      "coverage": "₹25 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Hurricane Super Comprehensive Cover",
+      "policy_cost": "₹7,800–₹9,000",
+      "coverage": "₹45 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+    "cyclone": {
+  "disaster_type": "Cyclone (Severe Wind & Storm Surge Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Cyclone Basic Damage Cover",
+      "policy_explanation": "Cyclone Basic Damage Cover is designed to provide short-term financial protection against minor cyclone-related damage. It primarily covers losses caused by strong winds and heavy rainfall. The plan focuses on basic roof and wall repairs. Household contents are excluded to keep the policy affordable. The short coverage duration makes it suitable for temporary cyclone exposure. It helps reduce immediate repair expenses after mild cyclones. This plan is ideal for low-risk coastal or inland regions with occasional cyclones.",
+      "best_for": "Tenants and low-risk households",
+      "policy_details": {
+        "policy_cost": "₹1,000 – ₹1,300",
+        "coverage_amount": "Up to ₹4 Lakhs",
+        "policy_duration": "20 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage",
+        "Wall cracks due to wind pressure",
+        "Broken windows",
+        "Rainwater seepage damage",
+        "Basic electrical damage",
+        "Fallen debris impact",
+        "Temporary weather-related damage",
+        "Basic cleanup expenses"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Vehicle damage",
+        "Temporary accommodation",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable cyclone protection",
+        "Suitable for mild cyclones",
+        "Low policy cost",
+        "Quick financial relief",
+        "Simple coverage structure",
+        "Ideal for tenants",
+        "Short waiting period",
+        "Effective for short-term cyclone risks"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Cyclone Standard Home Cover",
+      "policy_explanation": "Cyclone Standard Home Cover offers balanced protection against moderate cyclone damage. It includes coverage for structural damage and essential electrical systems. The plan supports recovery from wind and rain-related losses. The longer policy duration allows sufficient time for repairs. It offers better protection than basic plans while remaining cost-effective. It reduces financial stress caused by moderate cyclones. Suitable for residential homes in cyclone-prone regions.",
+      "best_for": "Residential homes",
+      "policy_details": {
+        "policy_cost": "₹2,000 – ₹2,500",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "40 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage",
+        "Roof damage",
+        "Electrical wiring issues",
+        "Water damage from heavy rain",
+        "Switchboards and fuse boxes",
+        "Cleanup and debris removal",
+        "Minor interior repairs",
+        "Outdoor structure damage"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Vehicle losses",
+        "Extended accommodation",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and affordability",
+        "Better than basic protection",
+        "Suitable for family homes",
+        "Covers structural damage",
+        "Moderate policy cost",
+        "Reliable seasonal coverage",
+        "Faster claim settlement",
+        "Reduced repair expenses"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Cyclone Comprehensive Cover",
+      "policy_explanation": "Cyclone Comprehensive Cover provides extensive protection against severe cyclone damage. It covers both structural damage and household contents. The plan includes cleanup and repair support. The longer coverage duration supports full recovery. It significantly reduces financial burden after major cyclones. Designed for homeowners with higher asset exposure. Ideal for areas experiencing frequent or intense cyclones.",
+      "best_for": "Homeowners",
+      "policy_details": {
+        "policy_cost": "₹3,500 – ₹4,200",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical system damage",
+        "Interior water damage",
+        "Cleanup and debris removal",
+        "Emergency repair services",
+        "Temporary power restoration"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Commercial losses",
+        "Intentional damage",
+        "Vehicle flood losses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive cyclone coverage",
+        "Covers household contents",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for severe cyclones",
+        "Strong financial protection",
+        "Suitable for homeowners",
+        "Peace of mind during storms"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Cyclone Super Protection Cover",
+      "policy_explanation": "Cyclone Super Protection Cover is designed for high-risk coastal and cyclone-prone zones. It includes coverage for temporary accommodation and emergency repairs. The reduced waiting period ensures faster claim activation. The plan supports both immediate response and recovery needs. It is suitable for repeated cyclone exposure. The extended duration provides additional financial security. Ideal for properties with higher financial risk.",
+      "best_for": "Coastal and high-risk regions",
+      "policy_details": {
+        "policy_cost": "₹5,200 – ₹6,000",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repair services",
+        "Electrical system replacement",
+        "Debris clearance",
+        "Interior restoration",
+        "Storm impact recovery"
+      ],
+      "not_covered": [
+        "Negligence-related losses",
+        "Undeclared valuables",
+        "Commercial vehicle losses",
+        "Illegal constructions",
+        "Business interruption"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Accommodation support included",
+        "Ideal for coastal regions",
+        "Extended recovery duration",
+        "Comprehensive storm coverage",
+        "Reduced waiting period",
+        "Strong financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Cyclone Super Comprehensive Cover",
+      "policy_explanation": "Cyclone Super Comprehensive Cover offers maximum protection against extreme cyclone damage. It covers property, contents, relocation support, and emergency services. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial relief. Designed for regions with frequent extreme cyclones. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "High-value coastal properties",
+      "policy_details": {
+        "policy_cost": "₹7,500 – ₹8,800",
+        "coverage_amount": "Up to ₹40 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Long-term temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Storm debris cleanup",
+        "Relocation and recovery support"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum cyclone protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Ideal for extreme cyclone zones",
+        "All-inclusive coverage",
+        "High-value asset security",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Cyclone Basic Damage Cover",
+      "policy_cost": "₹1,000–₹1,300",
+      "coverage": "₹4 Lakhs",
+      "duration": "20 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Cyclone Standard Home Cover",
+      "policy_cost": "₹2,000–₹2,500",
+      "coverage": "₹8 Lakhs",
+      "duration": "40 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Cyclone Comprehensive Cover",
+      "policy_cost": "₹3,500–₹4,200",
+      "coverage": "₹15 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Cyclone Super Protection Cover",
+      "policy_cost": "₹5,200–₹6,000",
+      "coverage": "₹25 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Cyclone Super Comprehensive Cover",
+      "policy_cost": "₹7,500–₹8,800",
+      "coverage": "₹40 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+    "tornado": {
+  "disaster_type": "Tornado (Extreme Wind & Structural Damage Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Tornado Basic Property Cover",
+      "policy_explanation": "Tornado Basic Property Cover is designed to provide short-term financial protection against minor tornado-related damage. It mainly covers losses caused by strong winds and flying debris. The plan focuses on basic structural repairs such as roofs, walls, and windows. Household contents are excluded to keep the policy affordable. The short coverage duration makes it suitable for temporary tornado exposure. It helps reduce immediate repair expenses after mild tornado impact. This plan is ideal for low-risk areas with infrequent tornado activity.",
+      "best_for": "Tenants and low-risk residential areas",
+      "policy_details": {
+        "policy_cost": "₹1,000 – ₹1,300",
+        "coverage_amount": "Up to ₹4 Lakhs",
+        "policy_duration": "20 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Minor roof damage",
+        "Wall cracks due to wind pressure",
+        "Broken windows",
+        "Damage from flying debris",
+        "Basic electrical damage",
+        "Fallen tree impact",
+        "Temporary weather-related damage",
+        "Basic cleanup expenses"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Vehicle damage",
+        "Temporary accommodation",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable tornado protection",
+        "Suitable for mild tornado impact",
+        "Low policy cost",
+        "Quick financial relief",
+        "Simple coverage structure",
+        "Ideal for tenants",
+        "Short waiting period",
+        "Effective for short-term tornado risks"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Tornado Standard Home Cover",
+      "policy_explanation": "Tornado Standard Home Cover offers balanced protection against moderate tornado damage. It includes coverage for structural damage and essential electrical systems. The plan supports recovery from wind-related losses. The longer policy duration allows sufficient time for repairs. It offers better protection than basic plans while remaining cost-effective. It reduces financial stress caused by moderate tornado events. Suitable for residential homes in tornado-prone regions.",
+      "best_for": "Residential households",
+      "policy_details": {
+        "policy_cost": "₹2,000 – ₹2,500",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "40 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage",
+        "Roof and ceiling damage",
+        "Electrical wiring issues",
+        "Interior wall damage",
+        "Water damage from rain",
+        "Switchboards and fuse boxes",
+        "Cleanup and debris removal",
+        "Outdoor structure damage"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Vehicle losses",
+        "Extended accommodation",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and affordability",
+        "Better than basic protection",
+        "Suitable for family homes",
+        "Covers structural damage",
+        "Moderate policy cost",
+        "Reliable seasonal coverage",
+        "Faster claim settlement",
+        "Reduced repair expenses"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Tornado Comprehensive Cover",
+      "policy_explanation": "Tornado Comprehensive Cover provides extensive protection against severe tornado damage. It covers both structural damage and household contents. The plan includes cleanup and repair support. The longer coverage duration supports full recovery. It significantly reduces financial burden after major tornado events. Designed for homeowners with higher asset exposure. Ideal for regions experiencing frequent or intense tornadoes.",
+      "best_for": "Homeowners in tornado-prone areas",
+      "policy_details": {
+        "policy_cost": "₹3,600 – ₹4,200",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical system damage",
+        "Interior water damage",
+        "Cleanup and debris removal",
+        "Emergency repair services",
+        "Temporary power restoration"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Commercial losses",
+        "Intentional damage",
+        "Vehicle flood losses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive tornado coverage",
+        "Covers household contents",
+        "Higher coverage limits",
+        "Reduced waiting period",
+        "Ideal for severe tornadoes",
+        "Strong financial protection",
+        "Suitable for homeowners",
+        "Peace of mind during disasters"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Tornado Super Protection Cover",
+      "policy_explanation": "Tornado Super Protection Cover is designed for high-risk tornado regions. It includes coverage for temporary accommodation and emergency repairs. The reduced waiting period ensures faster claim activation. The plan supports both immediate response and recovery needs. It is suitable for repeated tornado exposure. The extended duration provides additional financial security. Ideal for properties with higher financial risk.",
+      "best_for": "High-risk tornado regions",
+      "policy_details": {
+        "policy_cost": "₹5,500 – ₹6,500",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repair services",
+        "Electrical system replacement",
+        "Debris clearance",
+        "Interior restoration",
+        "Storm impact recovery"
+      ],
+      "not_covered": [
+        "Negligence-related losses",
+        "Undeclared valuables",
+        "Commercial vehicle losses",
+        "Illegal constructions",
+        "Business interruption"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Accommodation support included",
+        "Ideal for tornado-prone zones",
+        "Extended recovery duration",
+        "Comprehensive storm coverage",
+        "Reduced waiting period",
+        "Strong financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Tornado Super Comprehensive Cover",
+      "policy_explanation": "Tornado Super Comprehensive Cover offers maximum protection against extreme tornado destruction. It covers property, contents, relocation support, and emergency services. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial relief. Designed for regions with frequent extreme tornado events. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "High-value properties and extreme-risk zones",
+      "policy_details": {
+        "policy_cost": "₹7,800 – ₹9,000",
+        "coverage_amount": "Up to ₹45 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "6 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Long-term temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Storm debris cleanup",
+        "Relocation and recovery support"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum tornado protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Ideal for extreme tornado zones",
+        "All-inclusive coverage",
+        "High-value asset security",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Tornado Basic Property Cover",
+      "policy_cost": "₹1,000–₹1,300",
+      "coverage": "₹4 Lakhs",
+      "duration": "20 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Tornado Standard Home Cover",
+      "policy_cost": "₹2,000–₹2,500",
+      "coverage": "₹8 Lakhs",
+      "duration": "40 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Tornado Comprehensive Cover",
+      "policy_cost": "₹3,600–₹4,200",
+      "coverage": "₹15 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Tornado Super Protection Cover",
+      "policy_cost": "₹5,500–₹6,500",
+      "coverage": "₹25 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "12 hours"
+    },
+    {
+      "plan_name": "Tornado Super Comprehensive Cover",
+      "policy_cost": "₹7,800–₹9,000",
+      "coverage": "₹45 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "6 hours"
+    }
+  ]
+}
+,
+    "drought": {
+  "disaster_type": "Drought (Water Scarcity & Livelihood Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Drought Basic Relief Cover",
+      "policy_explanation": "Drought Basic Relief Cover is designed to provide short-term financial assistance during mild drought conditions. It focuses on covering essential water procurement and basic daily living expenses. The plan supports households facing temporary water shortages. Coverage is limited to essential relief to keep costs affordable. The short duration makes it suitable for early-stage drought impact. It helps reduce immediate financial stress. This plan is ideal for low-income households and individuals in mildly affected regions.",
+      "best_for": "Low-income households",
+      "policy_details": {
+        "policy_cost": "₹500 – ₹700",
+        "coverage_amount": "Up to ₹1 Lakh",
+        "policy_duration": "30 days",
+        "waiting_period": "72 hours"
+      },
+      "covers": [
+        "Drinking water procurement",
+        "Emergency water supply costs",
+        "Basic food support",
+        "Essential daily living expenses",
+        "Temporary water storage solutions",
+        "Medical support for dehydration",
+        "Community water access charges",
+        "Short-term relief assistance"
+      ],
+      "not_covered": [
+        "Long-term livelihood loss",
+        "Crop failure compensation",
+        "Business interruption",
+        "Property damage",
+        "Luxury consumption expenses"
+      ],
+      "why_choose_this_plan": [
+        "Affordable drought relief option",
+        "Quick support during early drought",
+        "Ideal for low-income families",
+        "Covers essential daily needs",
+        "Simple and clear coverage",
+        "Suitable for short-term shortages",
+        "Low policy cost",
+        "Immediate financial assistance"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Drought Household Support Cover",
+      "policy_explanation": "Drought Household Support Cover provides balanced financial support during moderate drought conditions. It covers water procurement and essential household expenses. The plan helps families manage rising water and living costs. It offers better coverage than basic plans. The extended duration allows sustained support during prolonged shortages. It reduces financial pressure on urban and semi-urban households. Suitable for families facing moderate drought impact.",
+      "best_for": "Urban and semi-urban households",
+      "policy_details": {
+        "policy_cost": "₹900 – ₹1,200",
+        "coverage_amount": "Up to ₹3 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Water tanker expenses",
+        "Household water storage costs",
+        "Essential food supplies",
+        "Medical expenses due to dehydration",
+        "Utility cost support",
+        "Emergency household expenses",
+        "Community water access fees",
+        "Short-term living support"
+      ],
+      "not_covered": [
+        "Agricultural crop losses",
+        "Permanent relocation costs",
+        "Business losses",
+        "Luxury household items",
+        "Non-essential expenses"
+      ],
+      "why_choose_this_plan": [
+        "Balanced drought support",
+        "Covers household water needs",
+        "Suitable for families",
+        "Longer coverage duration",
+        "Moderate policy cost",
+        "Reliable during prolonged shortages",
+        "Reduces household financial stress",
+        "Better than basic relief plans"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Drought Comprehensive Living Cover",
+      "policy_explanation": "Drought Comprehensive Living Cover offers extensive support during severe and prolonged drought conditions. It covers essential living expenses and medical support. The plan ensures continuity of daily life during water scarcity. The longer duration provides sustained financial assistance. It significantly reduces economic stress on affected families. Designed for drought-prone regions. Ideal for households facing extended water shortages.",
+      "best_for": "Families in drought-prone regions",
+      "policy_details": {
+        "policy_cost": "₹1,800 – ₹2,200",
+        "coverage_amount": "Up to ₹6 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Extended water supply expenses",
+        "Food and nutrition support",
+        "Medical treatment for heat and dehydration",
+        "Household utility expenses",
+        "Temporary livelihood support",
+        "Community water access",
+        "Emergency household assistance",
+        "Basic shelter-related expenses"
+      ],
+      "not_covered": [
+        "Permanent income loss",
+        "Crop insurance claims",
+        "Property repairs",
+        "Business shutdown losses",
+        "Luxury consumption"
+      ],
+      "why_choose_this_plan": [
+        "Extended drought protection",
+        "Higher coverage limits",
+        "Supports daily living needs",
+        "Suitable for long drought periods",
+        "Strong financial relief",
+        "Reduces family hardship",
+        "Ideal for drought-prone areas",
+        "Comprehensive living support"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Drought Super Protection Cover",
+      "policy_explanation": "Drought Super Protection Cover is designed for high-risk drought regions facing extreme water scarcity. It includes support for relocation, water supply, and livelihood disruption. The reduced waiting period ensures faster claim activation. The plan provides holistic support during severe drought emergencies. It helps maintain financial stability. The extended duration allows sustained recovery. Ideal for high-risk drought zones.",
+      "best_for": "High-risk drought regions",
+      "policy_details": {
+        "policy_cost": "₹2,800 – ₹3,200",
+        "coverage_amount": "Up to ₹10 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Emergency water supply",
+        "Temporary relocation assistance",
+        "Livelihood disruption support",
+        "Medical treatment",
+        "Household living expenses",
+        "Community water access",
+        "Transportation support",
+        "Emergency relief services"
+      ],
+      "not_covered": [
+        "Permanent relocation costs",
+        "Crop yield compensation",
+        "Business losses",
+        "Luxury expenses",
+        "Policy misuse"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Supports relocation needs",
+        "Ideal for extreme drought zones",
+        "Holistic drought protection",
+        "Extended policy duration",
+        "Strong financial security",
+        "Reliable emergency support"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Drought Super Comprehensive Cover",
+      "policy_explanation": "Drought Super Comprehensive Cover offers maximum protection during extreme and long-term drought conditions. It covers living expenses, emergency relocation, and extended recovery support. The longest policy duration ensures complete assistance. Immediate activation provides rapid financial relief. Designed for regions facing severe drought emergencies. It minimizes long-term socio-economic impact. Ideal for maximum safety and livelihood protection.",
+      "best_for": "Severe drought-affected regions",
+      "policy_details": {
+        "policy_cost": "₹4,000 – ₹4,800",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "180 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Long-term water supply",
+        "Extended living expense support",
+        "Emergency relocation costs",
+        "Medical and health support",
+        "Livelihood assistance",
+        "Community resource access",
+        "Transportation and logistics",
+        "Disaster recovery support"
+      ],
+      "not_covered": [
+        "Intentional misuse of benefits",
+        "Luxury lifestyle expenses",
+        "Business expansion losses",
+        "Property damage",
+        "Policy violations"
+      ],
+      "why_choose_this_plan": [
+        "Maximum drought protection",
+        "Longest coverage duration",
+        "High-value financial support",
+        "Ideal for severe drought impact",
+        "Supports livelihood recovery",
+        "Fastest claim activation",
+        "Comprehensive relief coverage",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Drought Basic Relief Cover",
+      "policy_cost": "₹500–₹700",
+      "coverage": "₹1 Lakh",
+      "duration": "30 days",
+      "waiting_period": "72 hours"
+    },
+    {
+      "plan_name": "Drought Household Support Cover",
+      "policy_cost": "₹900–₹1,200",
+      "coverage": "₹3 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Drought Comprehensive Living Cover",
+      "policy_cost": "₹1,800–₹2,200",
+      "coverage": "₹6 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Drought Super Protection Cover",
+      "policy_cost": "₹2,800–₹3,200",
+      "coverage": "₹10 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Drought Super Comprehensive Cover",
+      "policy_cost": "₹4,000–₹4,800",
+      "coverage": "₹15 Lakhs",
+      "duration": "180 days",
+      "waiting_period": "12 hours"
+    }
+  ]
+}
+,
+    "tsunami": {
+  "disaster_type": "Tsunami (Coastal Inundation & Structural Damage Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Tsunami Basic Property Cover",
+      "policy_explanation": "Tsunami Basic Property Cover is designed to provide short-term financial protection against minor tsunami-related damage. It primarily covers limited structural damage caused by seawater intrusion. The plan focuses on essential repairs such as walls, flooring, and basic electrical systems. Household contents are excluded to keep the policy affordable. The short coverage duration makes it suitable for low-impact tsunami events. It helps reduce immediate repair and cleanup expenses. This plan is ideal for tenants and low-risk coastal households.",
+      "best_for": "Tenants in coastal areas",
+      "policy_details": {
+        "policy_cost": "₹1,200 – ₹1,500",
+        "coverage_amount": "Up to ₹5 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "72 hours"
+      },
+      "covers": [
+        "Minor structural wall damage",
+        "Flooring damage due to seawater",
+        "Basic electrical wiring damage",
+        "Saltwater corrosion cleanup",
+        "Broken doors and windows",
+        "Minor plumbing damage",
+        "Basic debris removal",
+        "Emergency cleanup expenses"
+      ],
+      "not_covered": [
+        "Household appliances",
+        "Furniture and personal belongings",
+        "Vehicle damage",
+        "Temporary accommodation",
+        "Luxury items"
+      ],
+      "why_choose_this_plan": [
+        "Affordable tsunami protection",
+        "Ideal for low-impact tsunami events",
+        "Covers essential structural repairs",
+        "Low policy cost",
+        "Suitable for tenants",
+        "Short-term financial relief",
+        "Simple coverage structure",
+        "Useful for low-risk coastal zones"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Tsunami Standard Home Cover",
+      "policy_explanation": "Tsunami Standard Home Cover provides balanced protection against moderate tsunami damage. It includes coverage for structural damage and essential electrical systems affected by seawater. The plan supports recovery from coastal flooding and wave impact. The longer coverage duration allows sufficient repair time. It offers better protection than basic plans while remaining cost-effective. It reduces financial stress caused by moderate tsunami events. Suitable for residential households in coastal regions.",
+      "best_for": "Coastal households",
+      "policy_details": {
+        "policy_cost": "₹2,000 – ₹2,500",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Structural wall and roof damage",
+        "Electrical system damage",
+        "Plumbing system damage",
+        "Interior water damage",
+        "Foundation inspection costs",
+        "Debris and sludge removal",
+        "Basic household repairs",
+        "Emergency sanitation services"
+      ],
+      "not_covered": [
+        "High-value electronics unless declared",
+        "Vehicle losses",
+        "Extended temporary accommodation",
+        "Negligence-related damage",
+        "Luxury furniture"
+      ],
+      "why_choose_this_plan": [
+        "Balanced tsunami coverage",
+        "Better than basic protection",
+        "Suitable for family homes",
+        "Covers electrical and plumbing damage",
+        "Moderate policy cost",
+        "Reliable coastal protection",
+        "Longer recovery duration",
+        "Reduces repair expenses"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Tsunami Comprehensive Cover",
+      "policy_explanation": "Tsunami Comprehensive Cover offers extensive protection against severe tsunami damage. It covers both structural damage and household contents. The plan includes cleanup, repair, and recovery support. The longer coverage duration supports full rehabilitation. It significantly reduces financial burden after major tsunami events. Designed for homeowners with higher asset exposure. Ideal for regions with frequent coastal risk.",
+      "best_for": "Homeowners near the coastline",
+      "policy_details": {
+        "policy_cost": "₹3,500 – ₹4,200",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Household appliances",
+        "Furniture damage",
+        "Electrical system replacement",
+        "Interior restoration",
+        "Cleanup and debris removal",
+        "Emergency repair services",
+        "Temporary utility restoration"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Unauthorized construction damage",
+        "Commercial losses",
+        "Intentional damage",
+        "Vehicle flood losses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive tsunami coverage",
+        "Covers household contents",
+        "Higher coverage limits",
+        "Extended recovery duration",
+        "Reduced waiting period",
+        "Ideal for severe tsunami impact",
+        "Strong financial protection",
+        "Peace of mind for homeowners"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Tsunami Super Protection Cover",
+      "policy_explanation": "Tsunami Super Protection Cover is designed for high-risk coastal zones exposed to severe tsunami impact. It includes coverage for temporary accommodation and emergency repairs. The reduced waiting period ensures faster claim activation. The plan supports both immediate response and recovery needs. It is suitable for repeated coastal flooding exposure. The extended duration provides enhanced financial security. Ideal for high-risk coastal properties.",
+      "best_for": "High-risk coastal regions",
+      "policy_details": {
+        "policy_cost": "₹5,000 – ₹6,000",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Severe structural damage",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repair services",
+        "Electrical system overhaul",
+        "Debris clearance",
+        "Interior restoration",
+        "Coastal recovery support"
+      ],
+      "not_covered": [
+        "Negligence-related losses",
+        "Undeclared valuables",
+        "Commercial vehicle losses",
+        "Illegal constructions",
+        "Business interruption"
+      ],
+      "why_choose_this_plan": [
+        "Fast claim activation",
+        "High coverage limits",
+        "Accommodation support included",
+        "Ideal for high-risk coastal zones",
+        "Extended recovery duration",
+        "Comprehensive tsunami protection",
+        "Reduced waiting period",
+        "Strong financial backup"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Tsunami Super Comprehensive Cover",
+      "policy_explanation": "Tsunami Super Comprehensive Cover offers maximum protection against extreme tsunami destruction. It covers property, contents, relocation support, and emergency services. The longest policy duration ensures complete recovery assistance. Immediate activation allows rapid financial relief. Designed for regions facing extreme coastal disasters. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "Extreme-risk coastal zones",
+      "policy_details": {
+        "policy_cost": "₹7,500 – ₹9,000",
+        "coverage_amount": "Up to ₹40 Lakhs",
+        "policy_duration": "180 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Long-term temporary accommodation",
+        "Emergency repair services",
+        "Electrical system replacement",
+        "Disaster debris cleanup",
+        "Relocation and recovery support"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Undeclared high-value assets",
+        "Commercial business losses",
+        "Policy violations",
+        "Illegal property extensions"
+      ],
+      "why_choose_this_plan": [
+        "Maximum tsunami protection",
+        "Fastest waiting period",
+        "Highest coverage limits",
+        "Extended recovery support",
+        "Ideal for extreme coastal risks",
+        "All-inclusive coverage",
+        "High-value asset security",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Tsunami Basic Property Cover",
+      "policy_cost": "₹1,200–₹1,500",
+      "coverage": "₹5 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "72 hours"
+    },
+    {
+      "plan_name": "Tsunami Standard Home Cover",
+      "policy_cost": "₹2,000–₹2,500",
+      "coverage": "₹8 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Tsunami Comprehensive Cover",
+      "policy_cost": "₹3,500–₹4,200",
+      "coverage": "₹15 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Tsunami Super Protection Cover",
+      "policy_cost": "₹5,000–₹6,000",
+      "coverage": "₹25 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Tsunami Super Comprehensive Cover",
+      "policy_cost": "₹7,500–₹9,000",
+      "coverage": "₹40 Lakhs",
+      "duration": "180 days",
+      "waiting_period": "12 hours"
+    }
+  ]
+}
+,
+    "pandemic": {
+  "disaster_type": "Pandemic / Epidemic (Infectious Disease & Healthcare Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Pandemic Basic Health Cover",
+      "policy_explanation": "Pandemic Basic Health Cover is designed to provide essential medical financial support during infectious disease outbreaks. It focuses on covering basic hospitalization and treatment expenses related to pandemic illnesses. The plan helps manage sudden medical costs caused by widespread infections. It offers short-term coverage suitable for mild to moderate outbreaks. The policy keeps premiums affordable by limiting coverage scope. It reduces immediate financial stress during emergency hospitalization. This plan is ideal for individuals seeking basic pandemic protection.",
+      "best_for": "Individuals",
+      "policy_details": {
+        "policy_cost": "₹700 – ₹1,000",
+        "coverage_amount": "Up to ₹2 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Hospitalization expenses",
+        "Doctor consultation fees",
+        "Basic diagnostic tests",
+        "Medicine costs",
+        "Isolation ward charges",
+        "Room rent (shared wards)",
+        "Nursing charges",
+        "Emergency ambulance services"
+      ],
+      "not_covered": [
+        "ICU treatment",
+        "Income loss compensation",
+        "Home quarantine expenses",
+        "Experimental treatments",
+        "Non-pandemic illnesses"
+      ],
+      "why_choose_this_plan": [
+        "Affordable pandemic health cover",
+        "Covers essential medical expenses",
+        "Ideal for individuals",
+        "Quick medical financial support",
+        "Short waiting period",
+        "Easy policy access",
+        "Suitable for mild outbreaks",
+        "Reduces sudden hospitalization costs"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Pandemic Standard Medical Cover",
+      "policy_explanation": "Pandemic Standard Medical Cover provides enhanced protection against pandemic-related medical expenses. It covers hospitalization, diagnostics, and treatment costs. The plan offers better coverage than basic plans while remaining affordable. It supports families during prolonged outbreaks. The policy duration allows adequate recovery time. It reduces the financial burden of repeated medical visits. Suitable for households requiring balanced pandemic protection.",
+      "best_for": "Families",
+      "policy_details": {
+        "policy_cost": "₹1,500 – ₹2,000",
+        "coverage_amount": "Up to ₹5 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Hospitalization costs",
+        "Doctor consultations",
+        "Diagnostic and lab tests",
+        "Medicine and injections",
+        "Isolation ward expenses",
+        "Ambulance charges",
+        "Post-hospitalization follow-ups",
+        "Protective medical equipment"
+      ],
+      "not_covered": [
+        "ICU beyond defined limits",
+        "Long-term rehabilitation",
+        "Income loss",
+        "Non-prescribed medication",
+        "Non-pandemic illnesses"
+      ],
+      "why_choose_this_plan": [
+        "Balanced family protection",
+        "Higher coverage than basic plans",
+        "Suitable for prolonged outbreaks",
+        "Affordable premium range",
+        "Covers diagnostics and treatment",
+        "Extended policy duration",
+        "Reliable healthcare support",
+        "Peace of mind for families"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Pandemic Comprehensive Health Cover",
+      "policy_explanation": "Pandemic Comprehensive Health Cover offers extensive medical protection during severe pandemics. It includes ICU care and advanced treatment coverage. The plan supports patients requiring intensive medical attention. It significantly reduces high hospitalization expenses. The longer policy duration allows complete recovery support. Designed for high-risk individuals and severe cases. Ideal for comprehensive pandemic healthcare security.",
+      "best_for": "High-risk individuals",
+      "policy_details": {
+        "policy_cost": "₹3,000 – ₹3,800",
+        "coverage_amount": "Up to ₹10 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "ICU and ventilator charges",
+        "Advanced medical treatments",
+        "Hospitalization expenses",
+        "Specialist consultation fees",
+        "Diagnostic imaging and tests",
+        "High-cost medications",
+        "Isolation ICU wards",
+        "Emergency ambulance services"
+      ],
+      "not_covered": [
+        "Cosmetic procedures",
+        "Experimental or unapproved treatments",
+        "Chronic illness unrelated to pandemic",
+        "Mental health counseling",
+        "Non-pandemic hospitalizations"
+      ],
+      "why_choose_this_plan": [
+        "High coverage for severe cases",
+        "Includes ICU treatment",
+        "Ideal for high-risk patients",
+        "Reduced financial stress",
+        "Longer recovery duration",
+        "Advanced healthcare coverage",
+        "Fast claim support",
+        "Strong medical security"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Pandemic Super Protection Cover",
+      "policy_explanation": "Pandemic Super Protection Cover provides holistic financial protection during widespread outbreaks. It includes medical expenses along with income loss support. The plan ensures financial stability during extended illness periods. Faster claim processing helps during emergencies. It is suitable for working professionals impacted by lockdowns or illness. The extended duration supports long-term recovery. Designed for high financial risk situations.",
+      "best_for": "Working professionals",
+      "policy_details": {
+        "policy_cost": "₹4,500 – ₹5,500",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "180 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Hospitalization and treatment",
+        "ICU expenses",
+        "Income loss compensation",
+        "Isolation and recovery costs",
+        "Doctor and specialist fees",
+        "Diagnostic tests",
+        "Emergency ambulance",
+        "Post-treatment medical care"
+      ],
+      "not_covered": [
+        "Business losses",
+        "Non-medical personal expenses",
+        "Self-inflicted illness",
+        "Illegal activities",
+        "Non-pandemic health conditions"
+      ],
+      "why_choose_this_plan": [
+        "Income protection included",
+        "Ideal for professionals",
+        "Extended financial support",
+        "High coverage limits",
+        "Covers severe medical cases",
+        "Faster claim settlement",
+        "Long policy duration",
+        "Comprehensive financial security"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Pandemic Super Comprehensive Cover",
+      "policy_explanation": "Pandemic Super Comprehensive Cover offers maximum medical and financial protection during large-scale pandemics. It covers advanced treatment, income loss, and extended care. The longest policy duration ensures full recovery assistance. Immediate activation ensures rapid support during emergencies. Designed for families seeking complete pandemic security. It minimizes long-term financial impact. Ideal for maximum safety and peace of mind.",
+      "best_for": "Families seeking maximum protection",
+      "policy_details": {
+        "policy_cost": "₹6,500 – ₹8,000",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "240 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "All hospitalization expenses",
+        "ICU and ventilator support",
+        "Income loss compensation",
+        "Long-term treatment costs",
+        "Specialist consultations",
+        "Advanced diagnostics",
+        "Home recovery medical support",
+        "Emergency healthcare services"
+      ],
+      "not_covered": [
+        "Intentional self-harm",
+        "Illegal treatments",
+        "Cosmetic procedures",
+        "Non-pandemic illnesses",
+        "Policy violations"
+      ],
+      "why_choose_this_plan": [
+        "Maximum pandemic protection",
+        "Highest coverage limits",
+        "Income and medical security",
+        "Extended recovery duration",
+        "Fastest activation",
+        "Ideal for families",
+        "All-inclusive healthcare support",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+  "plan_comparison_summary": [
+    {
+      "plan_name": "Pandemic Basic Health Cover",
+      "policy_cost": "₹700–₹1,000",
+      "coverage": "₹2 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Pandemic Standard Medical Cover",
+      "policy_cost": "₹1,500–₹2,000",
+      "coverage": "₹5 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Pandemic Comprehensive Health Cover",
+      "policy_cost": "₹3,000–₹3,800",
+      "coverage": "₹10 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Pandemic Super Protection Cover",
+      "policy_cost": "₹4,500–₹5,500",
+      "coverage": "₹15 Lakhs",
+      "duration": "180 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Pandemic Super Comprehensive Cover",
+      "policy_cost": "₹6,500–₹8,000",
+      "coverage": "₹25 Lakhs",
+      "duration": "240 days",
+      "waiting_period": "12 hours"
+    }
+  ]
+}
+,
+    "volcanic_eruption": {
+  "disaster_type": "Volcanic Eruption (Ashfall, Lava & Air Quality Risk)",
+  "insurance_plans": [
+    {
+      "plan_id": 1,
+      "plan_name": "Volcanic Ash Basic Cover",
+      "policy_explanation": "Volcanic Ash Basic Cover is designed to provide short-term financial protection against minor damage caused by volcanic ashfall. It focuses on surface-level property damage and basic cleanup needs. The plan helps households manage immediate ash-related repair costs. Coverage is limited to keep the policy affordable. It is suitable for areas with low to moderate volcanic activity. The short duration supports temporary exposure scenarios. This plan reduces sudden out-of-pocket expenses after light ashfall events.",
+      "best_for": "Low-risk zones",
+      "policy_details": {
+        "policy_cost": "₹1,000 – ₹1,300",
+        "coverage_amount": "Up to ₹4 Lakhs",
+        "policy_duration": "30 days",
+        "waiting_period": "72 hours"
+      },
+      "covers": [
+        "Ash cleanup expenses",
+        "Roof surface damage",
+        "Blocked drainage systems",
+        "Exterior wall cleaning",
+        "Minor ventilation damage",
+        "Air filter replacement",
+        "Ash-related corrosion",
+        "Temporary property protection costs"
+      ],
+      "not_covered": [
+        "Lava flow damage",
+        "Major structural collapse",
+        "Health-related expenses",
+        "Long-term relocation",
+        "Commercial property losses"
+      ],
+      "why_choose_this_plan": [
+        "Affordable entry-level protection",
+        "Ideal for light ashfall zones",
+        "Covers basic cleanup costs",
+        "Short-term risk coverage",
+        "Simple policy structure",
+        "Low premium range",
+        "Quick financial relief",
+        "Suitable for temporary exposure"
+      ]
+    },
+    {
+      "plan_id": 2,
+      "plan_name": "Volcanic Property Standard Cover",
+      "policy_explanation": "Volcanic Property Standard Cover offers balanced protection against moderate volcanic damage. It includes coverage for ash accumulation, heat-related exterior damage, and basic structural repairs. The plan is designed for residential properties near volcanic zones. It provides a longer coverage duration for recovery. This policy helps reduce repair and maintenance expenses. It offers better protection than basic plans while remaining cost-effective. Suitable for households in moderate-risk regions.",
+      "best_for": "Residential properties",
+      "policy_details": {
+        "policy_cost": "₹2,200 – ₹2,800",
+        "coverage_amount": "Up to ₹8 Lakhs",
+        "policy_duration": "60 days",
+        "waiting_period": "48 hours"
+      },
+      "covers": [
+        "Roof damage from ash load",
+        "Exterior wall heat damage",
+        "Blocked plumbing systems",
+        "Electrical wiring impact",
+        "Ash-related interior seepage",
+        "Cleanup and debris removal",
+        "Basic repair costs",
+        "Protective sealing expenses"
+      ],
+      "not_covered": [
+        "Direct lava impact",
+        "Unauthorized construction damage",
+        "Vehicle losses",
+        "Health treatments",
+        "Business interruption losses"
+      ],
+      "why_choose_this_plan": [
+        "Balanced coverage and cost",
+        "Designed for moderate-risk zones",
+        "Covers structural and exterior damage",
+        "Longer recovery period",
+        "Affordable premium range",
+        "Better protection than basic cover",
+        "Reliable residential support",
+        "Reduced financial stress"
+      ]
+    },
+    {
+      "plan_id": 3,
+      "plan_name": "Volcanic Comprehensive Cover",
+      "policy_explanation": "Volcanic Comprehensive Cover provides extensive protection against severe volcanic impacts. It covers both structural damage and household contents affected by ash and heat. The plan includes cleanup and restoration support. A longer policy duration ensures adequate recovery time. It significantly reduces financial burden after major eruptions. Designed for homeowners near active volcanoes. Ideal for comprehensive property protection.",
+      "best_for": "Homeowners near volcanoes",
+      "policy_details": {
+        "policy_cost": "₹3,800 – ₹4,500",
+        "coverage_amount": "Up to ₹15 Lakhs",
+        "policy_duration": "90 days",
+        "waiting_period": "36 hours"
+      },
+      "covers": [
+        "Structural damage repairs",
+        "Household appliances",
+        "Furniture damage",
+        "Interior ash contamination",
+        "Electrical system damage",
+        "Cleanup and restoration",
+        "Emergency repair costs",
+        "Temporary safety measures"
+      ],
+      "not_covered": [
+        "Luxury items unless declared",
+        "Direct lava destruction",
+        "Long-term relocation costs",
+        "Health and medical expenses",
+        "Commercial losses"
+      ],
+      "why_choose_this_plan": [
+        "Comprehensive property protection",
+        "Covers household contents",
+        "Higher coverage limits",
+        "Longer recovery duration",
+        "Ideal for high-risk homeowners",
+        "Reduced out-of-pocket costs",
+        "Reliable claim support",
+        "Strong disaster resilience"
+      ]
+    },
+    {
+      "plan_id": 4,
+      "plan_name": "Volcanic Super Protection Cover",
+      "policy_explanation": "Volcanic Super Protection Cover offers advanced financial protection for high-risk volcanic regions. It includes coverage for severe structural damage and temporary accommodation support. Faster claim activation helps during emergencies. The plan supports both immediate repairs and displacement needs. It is designed for repeated or intense volcanic activity. Extended policy duration aids long-term recovery. Suitable for high-value properties in volcanic zones.",
+      "best_for": "High-risk volcanic zones",
+      "policy_details": {
+        "policy_cost": "₹5,500 – ₹6,500",
+        "coverage_amount": "Up to ₹25 Lakhs",
+        "policy_duration": "120 days",
+        "waiting_period": "24 hours"
+      },
+      "covers": [
+        "Major structural damage",
+        "Interior and exterior losses",
+        "Household contents",
+        "Temporary accommodation",
+        "Emergency repairs",
+        "Debris and ash removal",
+        "Utility restoration",
+        "Protective relocation costs"
+      ],
+      "not_covered": [
+        "Negligence-related damage",
+        "Undeclared high-value assets",
+        "Permanent relocation",
+        "Commercial operations loss",
+        "Illegal constructions"
+      ],
+      "why_choose_this_plan": [
+        "High coverage limits",
+        "Faster claim processing",
+        "Covers accommodation expenses",
+        "Designed for severe eruptions",
+        "Extended recovery support",
+        "Reduced waiting period",
+        "Comprehensive disaster protection",
+        "Peace of mind in high-risk zones"
+      ]
+    },
+    {
+      "plan_id": 5,
+      "plan_name": "Volcanic Super Comprehensive Cover",
+      "policy_explanation": "Volcanic Super Comprehensive Cover provides maximum protection against catastrophic volcanic events. It covers extensive property damage, contents, and emergency services. The longest policy duration ensures full recovery assistance. Immediate activation offers rapid financial support. Designed for extreme-risk volcanic regions. It minimizes long-term financial impact. Ideal for maximum safety and asset protection.",
+      "best_for": "Extreme volcanic risk areas",
+      "policy_details": {
+        "policy_cost": "₹8,000 – ₹9,500",
+        "coverage_amount": "Up to ₹40 Lakhs",
+        "policy_duration": "180 days",
+        "waiting_period": "12 hours"
+      },
+      "covers": [
+        "Complete structural damage",
+        "All household contents",
+        "Electronics and appliances",
+        "Temporary accommodation",
+        "Emergency evacuation support",
+        "Utility and system replacement",
+        "Full debris clearance",
+        "Disaster recovery services"
+      ],
+      "not_covered": [
+        "Intentional damage",
+        "Policy violations",
+        "Commercial mining losses",
+        "Health-related treatments",
+        "Non-residential properties"
+      ],
+      "why_choose_this_plan": [
+        "Maximum volcanic disaster protection",
+        "Highest coverage limits",
+        "Fastest activation",
+        "Extended recovery duration",
+        "Ideal for extreme-risk zones",
+        "Covers all major losses",
+        "Strong financial security",
+        "Complete peace of mind"
+      ]
+    }
+  ],
+   "plan_comparison_summary": [
+    {
+      "plan_name": "Volcanic Ash Basic Cover",
+      "policy_cost": "₹1,000–₹1,300",
+      "coverage": "₹4 Lakhs",
+      "duration": "30 days",
+      "waiting_period": "72 hours"
+    },
+    {
+      "plan_name": "Volcanic Property Standard Cover",
+      "policy_cost": "₹2,200–₹2,800",
+      "coverage": "₹8 Lakhs",
+      "duration": "60 days",
+      "waiting_period": "48 hours"
+    },
+    {
+      "plan_name": "Volcanic Comprehensive Cover",
+      "policy_cost": "₹3,800–₹4,500",
+      "coverage": "₹15 Lakhs",
+      "duration": "90 days",
+      "waiting_period": "36 hours"
+    },
+    {
+      "plan_name": "Volcanic Protection Cover",
+      "policy_cost": "₹5,500–₹6,500",
+      "coverage": "₹25 Lakhs",
+      "duration": "120 days",
+      "waiting_period": "24 hours"
+    },
+    {
+      "plan_name": "Volcanic Super Comprehensive Cover",
+      "policy_cost": "₹8,000–₹9,500",
+      "coverage": "₹40 Lakhs",
+      "duration": "180 days",
+      "waiting_period": "12 hours"
+    }
+  ]
+}
+}
