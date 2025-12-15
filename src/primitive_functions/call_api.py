@@ -45,3 +45,4 @@ def call_api_weather(lat: float, lon: float, days: int = 3):
     response.raise_for_status()
 
     return response.json().get("daily", {})
+ 
