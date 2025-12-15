@@ -480,6 +480,9 @@ if "user_context" not in st.session_state:
     st.session_state.user_context = {}
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = []
+# Insurance intent flag (NEW)
+if "insurance_requested" not in st.session_state:
+    st.session_state.insurance_requested = False
 
 def extract_location_from_text(text):
     """FIXED: Smart extraction of location from natural language"""
@@ -694,6 +697,16 @@ def process_user_message(user_text):
     # Extract policy mentions
     if any(word in user_text.lower() for word in ["policy", "insurance", "covered", "coverage"]):
         st.session_state.user_context['policy'] = "Standard Home Insurance"
+
+    # Detect explicit insurance intent (NEW)
+    insurance_keywords = [
+        "insurance", "policy", "coverage", "insured","benefits","advantage","advantages",
+        "claim", "premium", "plan", "yes", "yup","yeah","show", "sure","tell me"
+    ]
+    
+    if any(word in user_text.lower() for word in insurance_keywords):
+        st.session_state.insurance_requested = True
+
     
     # Store history
     if not st.session_state.user_context.get('history'):
@@ -746,11 +759,20 @@ def process_user_message(user_text):
             # Aggregate all data
             plan_obj["risk_summary"] = risk_result.get("aggregate", {})
             plan_obj["weather_analysis"] = risk_result.get("weather_analysis", {})
-            plan_obj["recommended_insurance"] = recommended_plans  # NEW: Add insurance
+            # plan_obj["recommended_insurance"] = recommended_plans
+
             plan_obj["generated_at"] = datetime.utcnow().isoformat()
             
             # Generate natural LLM response
             response = generate_conversational_response(user_text, plan_obj=plan_obj)
+
+            # Ask insurance follow-up ONLY if user has not asked yet (NEW)
+            if not st.session_state.insurance_requested:
+                response += (
+                    "\n\n💡 *Would you like to see insurance options or policies "
+                    "that can protect you from this type of disaster?*"
+                )
+
             
             # Add risk badge for displayInformation
             risk_level = plan_obj["risk_summary"]["level"]
@@ -858,6 +880,8 @@ with st.sidebar:
             st.session_state.messages = []
             st.session_state.conversation_history = []
             st.session_state.user_context = {}
+            st.session_state.insurance_requested = False
+
             st.rerun()
     
     st.markdown("---")
@@ -954,8 +978,24 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                     st.markdown("**📋 Your Preparedness Plan**")
                     for i, step in enumerate(plan_obj["plan"], 1):
                         st.markdown(f"**{i}.** {step}")
+
+                insurance_disaster = extract_disaster_from_text(prompt)
+
+                if not insurance_disaster:
+                    insurance_disaster = (
+                        list(plan_obj["weather_analysis"].get("risks_found", {}).keys())[0]
+                        if plan_obj["weather_analysis"].get("risks_found")
+                        else "flood"
+                    )
                 
-                if plan_obj.get("recommended_insurance"):
+                recommended_plans = get_insurance_plans(
+                    insurance_disaster,
+                    INSURANCE_DATA
+                )
+                    for plan in recommended_plans:
+
+                
+                    if st.session_state.insurance_requested:
                     st.markdown("---")
                     st.markdown("## 🏦 Recommended Insurance Plans")
                 
