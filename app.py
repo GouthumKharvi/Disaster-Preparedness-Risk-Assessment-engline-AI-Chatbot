@@ -10,6 +10,7 @@ FIXES APPLIED:
 ✓ More varied LLM responses
 ✓ Insurance recommendation engine integrated
 ✓ Fixed JSON loading and Streamlit config order
+✓ MODERN UI with animations and perfect visibility
 
 ============================================================================
 """
@@ -177,7 +178,7 @@ def format_insurance_response(disaster_type, insurance_data):
 INSURANCE_DATA = load_insurance_data()
 
 # Groq LLM Setup
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 GROQ_MODEL = "llama-3.3-70b-versatile"
 
 try:
@@ -188,288 +189,364 @@ except Exception:
     LLM_AVAILABLE = False
     groq_client = None
 
-# Enhanced CSS with all visibility fixes
+# 🎨 MODERN UI WITH ANIMATIONS
 st.markdown("""
 <style>
-    /* Main background - lighter gradient */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    
+    /* Global font */
+    * {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* Main background - Modern gradient */
     .main {
-        background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        animation: gradientShift 15s ease infinite;
     }
     
-    /* Chat input container */
+    @keyframes gradientShift {
+        0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        50% { background: linear-gradient(135deg, #764ba2 0%, #667eea 100%); }
+    }
+    
+    /* Chat container background */
+    .block-container {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2rem;
+    }
+    
+    /* Chat input container - Modern glassmorphism */
     .stChatFloatingInputContainer {
-        background-color: white !important;
-        border: 2px solid #667eea;
-        border-radius: 15px;
-        padding: 10px;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        animation: slideUp 0.5s ease;
     }
     
-    /* All chat messages - white background */
+    @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Chat messages - Glassmorphism cards */
     .stChatMessage {
-        background-color: white !important;
-        border-radius: 15px;
-        padding: 15px !important;
-        margin: 10px 0;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        color: #1a1a1a !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 20px !important;
+        margin: 15px 0;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: messageSlide 0.4s ease;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    /* User message specific */
+    .stChatMessage:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    @keyframes messageSlide {
+        from { 
+            transform: translateX(-20px); 
+            opacity: 0; 
+        }
+        to { 
+            transform: translateX(0); 
+            opacity: 1; 
+        }
+    }
+    
+    /* User message - Purple accent */
     [data-testid="stChatMessage"][data-testid*="user"] {
-        background-color: #e3f2fd !important;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%) !important;
+        border-left: 5px solid #667eea;
     }
     
-    /* Assistant message specific */
+    /* Assistant message - White */
     [data-testid="stChatMessage"][data-testid*="assistant"] {
-        background-color: #f5f5f5 !important;
+        background: rgba(255, 255, 255, 0.98) !important;
+        border-left: 5px solid #4ade80;
     }
     
-    /* Message content text */
-    .stChatMessage p, .stChatMessage div, .stChatMessage span {
-        color: #1a1a1a !important;
+    /* Message text - Always dark for readability */
+    .stChatMessage p, .stChatMessage div, .stChatMessage span, .stChatMessage li {
+        color: #1a1a2e !important;
     }
     
-    /* Risk badges - high contrast */
+    /* Risk badges - Animated */
     .risk-high {
-        background-color: #d32f2f;
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         color: white !important;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
         display: inline-block;
-        margin: 10px 0;
-        font-size: 16px;
-        animation: pulse 2s infinite;
+        margin: 15px 0;
+        font-size: 18px;
+        box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+        animation: pulse 2s infinite, glow 2s ease-in-out infinite;
     }
     
     @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.8; }
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    @keyframes glow {
+        0%, 100% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4); }
+        50% { box-shadow: 0 6px 30px rgba(239, 68, 68, 0.6); }
     }
     
     .risk-medium {
-        background-color: #f57c00;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         color: white !important;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
         display: inline-block;
-        margin: 10px 0;
-        font-size: 16px;
+        margin: 15px 0;
+        font-size: 18px;
+        box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
     }
     
     .risk-low {
-        background-color: #388e3c;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white !important;
-        padding: 8px 20px;
-        border-radius: 25px;
-        font-weight: bold;
+        padding: 12px 24px;
+        border-radius: 30px;
+        font-weight: 700;
         display: inline-block;
-        margin: 10px 0;
-        font-size: 16px;
+        margin: 15px 0;
+        font-size: 18px;
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
     }
     
-    /* Insurance plan cards */
-    .insurance-card {
-        background-color: #f8f9fa;
-        border-left: 4px solid #667eea;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 8px;
-    }
-    
-    .insurance-card h4 {
-        color: #667eea;
-        margin: 0 0 10px 0;
-    }
-    
-    /* Sidebar - modern gradient design */
+    /* Sidebar - Ultra modern gradient */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+        background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+        animation: sidebarGlow 10s ease infinite;
     }
     
-    [data-testid="stSidebar"] h1,
-    [data-testid="stSidebar"] h2,
-    [data-testid="stSidebar"] h3,
-    [data-testid="stSidebar"] h4,
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] div,
-    [data-testid="stSidebar"] li,
-    [data-testid="stSidebar"] span,
-    [data-testid="stSidebar"] label {
+    @keyframes sidebarGlow {
+        0%, 100% { background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%); }
+        50% { background: linear-gradient(180deg, #312e81 0%, #4c1d95 50%, #1e1b4b 100%); }
+    }
+    
+    [data-testid="stSidebar"] * {
         color: white !important;
     }
     
-    /* Sidebar buttons */
+    /* Sidebar buttons - Glassmorphism */
     [data-testid="stSidebar"] .stButton > button {
-        background-color: white !important;
-        color: #1a237e !important;
-        border: 2px solid white;
-        font-weight: bold;
+        background: rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px);
+        color: white !important;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        font-weight: 600;
+        transition: all 0.3s ease;
     }
     
     [data-testid="stSidebar"] .stButton > button:hover {
-        background-color: #e8eaf6 !important;
-        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.25) !important;
+        transform: scale(1.05) translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
     
-    /* Sidebar metrics */
+    /* Sidebar metrics - Glowing cards */
     .sidebar-metric {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        padding: 15px;
-        margin: 10px 0;
-        border-left: 4px solid #ffd54f;
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 18px;
+        margin: 12px 0;
+        border-left: 5px solid #fbbf24;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        animation: fadeIn 0.6s ease;
+    }
+    
+    .sidebar-metric:hover {
+        transform: translateX(5px);
+        box-shadow: 0 6px 25px rgba(251, 191, 36, 0.4);
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
     
     .sidebar-metric h4 {
-        color: #ffd54f !important;
-        margin: 0 0 5px 0;
-        font-size: 0.9em;
+        color: #fbbf24 !important;
+        margin: 0 0 8px 0;
+        font-size: 0.95em;
+        font-weight: 600;
     }
     
     .sidebar-metric p {
         color: white !important;
         margin: 0;
-        font-size: 1.2em;
-        font-weight: bold;
+        font-size: 1.3em;
+        font-weight: 700;
     }
     
-    /* Title with shadow for readability */
+    /* Title - Glowing effect */
     h1 {
-        color: #4a148c;
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         text-align: center;
-        font-size: 2.5em;
+        font-size: 3em;
         margin-bottom: 0;
-        text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
-        font-weight: bold;
+        font-weight: 900;
+        text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+        animation: titleGlow 3s ease-in-out infinite;
+    }
+    
+    @keyframes titleGlow {
+        0%, 100% { text-shadow: 0 0 40px rgba(255, 255, 255, 0.5); }
+        50% { text-shadow: 0 0 60px rgba(255, 255, 255, 0.8); }
     }
     
     /* Subtitle */
     .subtitle {
-        color: #6a1b9a;
+        color: rgba(255, 255, 255, 0.95);
         text-align: center;
-        font-size: 1.2em;
+        font-size: 1.3em;
         margin-bottom: 30px;
         font-weight: 500;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     
-    /* CRITICAL FIX: Expander with WHITE background and DARK text */
+    /* Expander - Premium glassmorphism */
     .streamlit-expanderHeader {
-        background-color: white !important;
-        color: #1a1a1a !important;
-        border-radius: 10px;
-        border: 2px solid #667eea;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(20px);
+        color: #1a1a2e !important;
+        border-radius: 15px;
+        border: 2px solid rgba(102, 126, 234, 0.5);
+        font-weight: 700;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .streamlit-expanderHeader:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+        border-color: #667eea;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
     }
     
     .streamlit-expanderContent {
-        background-color: white !important;
-        color: #1a1a1a !important;
-        padding: 20px;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px);
+        color: #1a1a2e !important;
+        padding: 25px;
+        border-radius: 0 0 15px 15px;
+        border: 2px solid rgba(102, 126, 234, 0.3);
+        border-top: none;
     }
     
-    /* CRITICAL FIX: All expander text must be dark */
     .streamlit-expanderContent * {
-        color: #1a1a1a !important;
-        background-color: transparent !important;
+        color: #1a1a2e !important;
     }
     
-    /* CRITICAL FIX: Column headers and text */
+    /* Columns - Clean separation */
     [data-testid="column"] {
-        background-color: white !important;
-        padding: 15px;
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
     }
     
     [data-testid="column"] * {
-        color: #1a1a1a !important;
+        color: #1a1a2e !important;
     }
     
-    /* CRITICAL FIX: JSON display - WHITE background, DARK text */
-    .stJson {
-        background-color: white !important;
-        color: #1a1a1a !important;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 15px;
-        margin: 10px 0;
-    }
-    
-    .stJson * {
-        background-color: white !important;
-        color: #1a1a1a !important;
-    }
-    
-    /* CRITICAL FIX: JSON pre and code elements */
-    .stJson pre, 
-    .stJson code,
-    pre,
-    code {
-        background-color: #f8f9fa !important;
-        color: #212529 !important;
-        border: 1px solid #dee2e6;
-        padding: 5px;
-        border-radius: 4px;
-    }
-    
-    /* CRITICAL FIX: Download button */
+    /* Download button - Premium style */
     .stDownloadButton > button {
-        background-color: white !important;
-        color: #667eea !important;
-        border: 2px solid #667eea !important;
-        border-radius: 10px;
-        padding: 10px 25px;
-        font-weight: bold;
-        transition: all 0.3s;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 15px;
+        padding: 15px 30px;
+        font-weight: 700;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
     }
     
     .stDownloadButton > button:hover {
-        background-color: #667eea !important;
-        color: white !important;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
     }
     
-    /* Button styling */
+    /* Regular buttons - Gradient style */
     .stButton > button {
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         color: white !important;
         border: none;
-        border-radius: 10px;
-        padding: 10px 25px;
-        font-weight: bold;
-        transition: all 0.3s;
+        border-radius: 15px;
+        padding: 12px 28px;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
     }
     
-    /* Input text color */
+    /* Input styling */
     input, textarea {
-        color: #1a1a1a !important;
+        color: #1a1a2e !important;
         background-color: white !important;
+        border-radius: 12px;
     }
     
-    /* Spinner text */
+    /* Spinner - Colorful */
     .stSpinner > div {
+        border-top-color: #667eea !important;
+    }
+    
+    /* Quick tips box - Modern card */
+    .tips-box {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 25px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        animation: fadeIn 0.8s ease;
+    }
+    
+    .tips-box h3 {
         color: #667eea !important;
+        font-weight: 700;
+        margin-bottom: 15px;
     }
     
-    /* Markdown in columns */
-    [data-testid="column"] .element-container {
-        background-color: transparent !important;
+    .tips-box ul li {
+        color: #1a1a2e !important;
+        padding: 8px 0;
+        font-weight: 500;
     }
     
-    [data-testid="column"] h1,
-    [data-testid="column"] h2,
-    [data-testid="column"] h3,
-    [data-testid="column"] h4,
-    [data-testid="column"] p,
-    [data-testid="column"] strong {
-        color: #1a1a1a !important;
-    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -875,18 +952,24 @@ with st.sidebar:
     
     st.markdown("---")
 
-with st.expander("💡 Quick Tips"):
-    st.markdown("""
-    **Example Queries:**
-    - "Risk in Mumbai?"
-    - "Weather for 13.34, 74.74"
-    - "Heavy rains last week"
-    - "What insurance do I need?"
-    - "Show me flood insurance"
-    """)
-
-    st.markdown("---")
-    st.markdown("<p style='text-align: center; color: #ffd54f; font-size: 0.8em;'>Developed By Gouthum</p>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <div class="tips-box">
+        <h3>💡 Quick Tips</h3>
+        <div>
+            <strong>Example Queries:</strong>
+            <ul>
+                <li>🌆 Risk in Mumbai?</li>
+                <li>📍 Weather for 13.34, 74.74</li>
+                <li>🌧️ Heavy rains last week</li>
+                <li>🏦 What insurance do I need?</li>
+                <li>🛡️ Show me flood insurance</li>
+            </ul>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 for msg in st.session_state.messages:
@@ -957,7 +1040,15 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                 
                 if plan_obj.get("recommended_insurance"):
                     st.markdown("---")
-                    st.markdown("## 🏦 Recommended Insurance Plans")
+                    st.markdown(
+                        """<div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                        padding: 25px; border-radius: 15px; margin: 25px 0; box-shadow: 0 8px 32px rgba(0,0,0,0.2);'>
+                        <h2 style='color: white; margin:0; font-weight:800; text-align:center;'>
+                        🏦 Recommended Insurance Plans</h2>
+                        </div>""",
+                        unsafe_allow_html=True
+                    )
+
                 
                     for plan in plan_obj["recommended_insurance"]:
                         policy_details = plan.get("policy_details", {})
@@ -971,36 +1062,82 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                         why_choose = plan.get("why_choose_this_plan", [])
                 
                         st.markdown(f"""
-                ### 🛡️ {plan.get('plan_name', 'N/A')}
+                <div style='background: white; padding: 30px; border-radius: 20px; 
+                border: 3px solid #667eea; margin: 25px 0;
+                box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+                transition: all 0.3s ease;'>
                 
-                **Best for:**  
-                {plan.get('best_for', 'N/A')}
+                <h3 style='color: #667eea; font-weight: 800; margin-bottom: 20px; font-size: 1.8em;'>
+                🛡️ {plan.get('plan_name', 'N/A')}
+                </h3>
                 
-                **💰 Policy Cost:**  
-                {policy_details.get('policy_cost', 'N/A')}
+                <div style='background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); 
+                padding: 15px; border-radius: 12px; margin: 15px 0; border-left: 5px solid #667eea;'>
+                <strong style='color: #374151; font-size: 1.1em;'>📌 Best for:</strong><br>
+                <span style='color: #1f2937; font-weight: 500; font-size: 1.05em;'>{plan.get('best_for', 'N/A')}</span>
+                </div>
                 
-                **🛡️ Coverage:**  
-                {policy_details.get('coverage_amount', 'N/A')}
+                <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;'>
                 
-                **⏳ Duration:**  
-                {policy_details.get('policy_duration', 'N/A')}
+                <div style='background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
+                padding: 15px; border-radius: 12px; border-left: 5px solid #10b981;'>
+                <strong style='color: #065f46; font-size: 1.1em;'>💰 Policy Cost</strong><br>
+                <span style='color: #047857; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_cost', 'N/A')}</span>
+                </div>
                 
-                **⏰ Waiting Period:**  
-                {policy_details.get('waiting_period', 'N/A')}
+                <div style='background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); 
+                padding: 15px; border-radius: 12px; border-left: 5px solid #3b82f6;'>
+                <strong style='color: #1e40af; font-size: 1.1em;'>🛡️ Coverage</strong><br>
+                <span style='color: #1e3a8a; font-weight: 700; font-size: 1.2em;'>{policy_details.get('coverage_amount', 'N/A')}</span>
+                </div>
                 
-                **📘 Policy Explanation:**  
-                {policy_explanation}
+                <div style='background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); 
+                padding: 15px; border-radius: 12px; border-left: 5px solid #f97316;'>
+                <strong style='color: #7c2d12; font-size: 1.1em;'>⏳ Duration</strong><br>
+                <span style='color: #9a3412; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_duration', 'N/A')}</span>
+                </div>
                 
-                **⭐ Why choose this plan?**
-                """)
+                <div style='background: linear-gradient(135deg, #fecdd3 0%, #fda4af 100%); 
+                padding: 15px; border-radius: 12px; border-left: 5px solid #f43f5e;'>
+                <strong style='color: #881337; font-size: 1.1em;'>⏰ Waiting Period</strong><br>
+                <span style='color: #9f1239; font-weight: 700; font-size: 1.2em;'>{policy_details.get('waiting_period', 'N/A')}</span>
+                </div>
+                
+                </div>
+                
+                <div style='background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%); 
+                padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #a855f7;'>
+                <strong style='color: #581c87; font-size: 1.2em;'>📘 Policy Explanation</strong><br>
+                <span style='color: #3b0764; line-height: 1.7; font-weight: 500;'>{policy_explanation}</span>
+                </div>
+                
+                <div style='background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+                padding: 15px; border-radius: 12px; border-left: 5px solid #f59e0b; margin-bottom: 15px;'>
+                <strong style='color: #78350f; font-size: 1.2em;'>⭐ Why choose this plan?</strong>
+                </div>
+                """, unsafe_allow_html=True)
                 
                         if isinstance(why_choose, list) and why_choose:
                             for reason in why_choose:
-                                st.markdown(f"- {reason}")
+                                st.markdown(f"""<div style='background: white; padding: 12px; 
+                                margin: 10px 0; border-radius: 10px; border-left: 4px solid #10b981;
+                                box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                                <span style='color: #1f2937; font-weight: 500;'>✓ {reason}</span>
+                                </div>""", unsafe_allow_html=True)
                         elif isinstance(why_choose, str) and why_choose:
-                            st.markdown(f"- {why_choose}")
+                            st.markdown(f"""<div style='background: white; padding: 12px; 
+                            margin: 10px 0; border-radius: 10px; border-left: 4px solid #10b981;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                            <span style='color: #1f2937; font-weight: 500;'>✓ {why_choose}</span>
+                            </div>""", unsafe_allow_html=True)
                         else:
-                            st.markdown("- Not specified")
+                            st.markdown("""<div style='background: white; padding: 12px; 
+                            margin: 10px 0; border-radius: 10px; border-left: 4px solid #9e9e9e;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                            <span style='color: #6b7280; font-weight: 500;'>- Not specified</span>
+                            </div>""", unsafe_allow_html=True)
+                        
+                        st.markdown("</div>", unsafe_allow_html=True)
                 
                 else:
                     st.info(
