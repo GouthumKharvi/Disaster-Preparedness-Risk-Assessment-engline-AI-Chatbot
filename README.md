@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌪️ Disaster Preparedness AI Chatbot
+# 🌪️ Disaster Preparedness and Insurance advice AI Chatbot
 
 ### *Intelligent Real-Time Risk Assessment & Emergency Planning System*
 
