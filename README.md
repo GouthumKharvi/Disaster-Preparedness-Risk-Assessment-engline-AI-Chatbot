@@ -2,7 +2,7 @@
 
 # 🌪️ Disaster Preparedness and Insurance advice AI Chatbot
 
-### *Intelligent Real-Time Risk Assessment & Emergency Planning System*
+### *Intelligent Real-Time Risk Assessment & Emergency Planning System along with Insurance advice*
 
 [![Streamlit App](https://img.shields.io/badge/Streamlit-Live_Demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://disaster-preparedness-risk-assessment-engline-ai-chatbot.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
