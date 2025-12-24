@@ -3,16 +3,6 @@
 DISASTER PREPAREDNESS CHATBOT - WITH INSURANCE ENGINE INTEGRATION
 ============================================================================
 
-FIXES APPLIED:
-✓ Risk calculation now shows HIGH/MEDIUM/LOW correctly
-✓ Location extraction improved (no more "surance" bug)
-✓ Better thresholds for risk detection
-✓ More varied LLM responses
-✓ Insurance recommendation engine integrated
-✓ Fixed JSON loading and Streamlit config order
-✓ MODERN UI with animations and perfect visibility
-
-============================================================================
 """
 
 import os
@@ -124,6 +114,33 @@ def extract_disaster_from_text(text):
                 return disaster
 
     return None
+
+def normalize_disaster_key(disaster_key):
+    """
+    Converts detected disaster names into insurance JSON keys
+    """
+    mapping = {
+        "flood": "flood",
+        "thunderstorm": "thunderstorm",
+        "storm": "thunderstorm",
+        "cyclone": "cyclone",
+        "hurricane": "hurricane",
+        "heatwave": "heatwave",
+        "cold wave": "cold_wave",
+        "coldwave": "cold_wave",
+        "winter storm": "winter_storm",
+        "hail": "hailstorm",
+        "hailstorm": "hailstorm",
+        "tornado": "tornado",
+        "drought": "drought",
+        "tsunami": "tsunami",
+        "pandemic": "pandemic",
+        "volcanic": "volcanic_eruption",
+        "volcano": "volcanic_eruption",
+        "earthquake": "earthquake",
+        "landslide": "landslide"
+    }
+    return mapping.get(disaster_key, disaster_key)
 
 
 
@@ -563,7 +580,7 @@ def extract_location_from_text(text):
     text_lower = text.lower()
     
     # FIXED: Skip insurance-related words to avoid "surance" bug
-    skip_words = ['insurance', 'surance', 'coverage', 'policy', 'insured', 'insurer']
+    skip_words = ['insurance', 'isnurance','surance', 'coverage', 'policy', 'insured', 'insurer']
     for word in skip_words:
         text_lower = text_lower.replace(word, '')
     
@@ -615,6 +632,16 @@ def format_risk_summary(risk_summary, weather_analysis):
     wind = weather_analysis.get("max_wind_ms", "N/A")
     risks = weather_analysis.get("risks_found", {})
 
+
+    st.markdown("""
+    <style>
+    h3 { color: #000000; }
+    </style>
+    """, unsafe_allow_html=True)
+    
+    
+
+    
     risk_text = f"""
 ### 🎯 Overall Risk Assessment
 
@@ -755,11 +782,40 @@ Generate a natural response:"""
     except Exception as e:
         return f"I'm having trouble processing that right now. Could you try rephrasing? (Error: {str(e)[:80]})"
 
+
+def detect_user_intent(user_text):
+    """Detect what the user is asking for - NEW FUNCTION FOR CONVERSATIONAL FLOW"""
+    text_lower = user_text.lower()
+    
+    # Check for preparedness plan request
+    prep_keywords = ["preparedness", "prepare", "plan", "steps", "what should i do", 
+                     "how to prepare", "emergency plan", "action plan", "checklist",
+                     "show me plan", "give me plan", "preparation"]
+    if any(keyword in text_lower for keyword in prep_keywords):
+        return "preparedness_plan"
+    
+    # Check for insurance request
+    insurance_keywords = ["insurance", "policy", "coverage", "insure", "protect", 
+                         "financial", "claim", "premium", "plans", "show insurance",
+                         "what insurance", "recommend insurance"]
+    if any(keyword in text_lower for keyword in insurance_keywords):
+        return "insurance"
+    
+    # Check for detailed risk assessment
+    risk_keywords = ["detailed", "complete", "full", "entire", "all details", 
+                    "everything", "comprehensive", "show all", "full report"]
+    if any(keyword in text_lower for keyword in risk_keywords):
+        return "full_assessment"
+    
+    # Default: initial assessment (just risk summary)
+    return "risk_summary"
+
+
 def process_user_message(user_text):
     """Process user input and orchestrate workflow"""
     # Extract location
     location = extract_location_from_text(user_text)
-    
+ 
     # Update context
     if location:
         st.session_state.user_context['location'] = location
@@ -852,6 +908,7 @@ def process_user_message(user_text):
         # No location yet - conversational guidance
         response = generate_conversational_response(user_text, has_location=has_location)
         return response, None
+
 
 # Header
 st.markdown("<h1>🌪️ Disaster Preparedness AI Assistant</h1>", unsafe_allow_html=True)
@@ -1006,6 +1063,9 @@ if len(st.session_state.messages) == 0:
         st.session_state.messages.append({"role": "assistant", "content": welcome_msg})
 
 
+# ============================================================================
+# MAIN CHAT INPUT - NEW CONVERSATIONAL FLOW
+# ============================================================================
 if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, or emergency preparedness..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.session_state.conversation_history.append({"role": "user", "content": prompt})
@@ -1019,11 +1079,15 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
         
         st.markdown(response, unsafe_allow_html=True)
         
+        # Detect what user wants to see - NEW INTENT DETECTION
+        user_intent = detect_user_intent(prompt)
+        
         if plan_obj:
-            with st.expander("📊 View Complete Risk Assessment & Preparedness Plan"):
-                col1, col2 = st.columns(2)
-                
-                with col1:
+            # CONVERSATIONAL FLOW: Show different sections based on user intent
+            
+            # 1️⃣ INITIAL RISK ASSESSMENT (Default)
+            if user_intent == "risk_summary":
+                with st.expander("📊 View Complete Risk Assessment", expanded=True):
                     st.markdown(
                         format_risk_summary(
                             plan_obj["risk_summary"],
@@ -1031,15 +1095,38 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                         ),
                         unsafe_allow_html=True
                     )
-
-                
-                with col2:
-                    st.markdown("**📋 Your Preparedness Plan**")
-                    for i, step in enumerate(plan_obj["plan"], 1):
-                        st.markdown(f"**{i}.** {step}")
-                
-                if plan_obj.get("recommended_insurance"):
+                    
                     st.markdown("---")
+                    st.markdown("""
+                    **💡 What would you like to know more about?**
+                    - Ask: *"Show me the preparedness plan"* or *"What should I do?"*
+                    - Ask: *"What insurance do I need?"* or *"Show insurance options"*
+                    - Ask: *"Show me everything"* for the complete report
+                    """)
+            
+            # 2️⃣ PREPAREDNESS PLAN (When requested)
+            elif user_intent == "preparedness_plan":
+                with st.expander("📋 Your Preparedness Plan", expanded=True):
+                    st.markdown("### Action Steps")
+                    for i, step in enumerate(plan_obj["plan"], 1):
+                        st.markdown(f"""
+                        <div style='background: white; padding: 15px; margin: 10px 0; 
+                        border-radius: 10px; border-left: 4px solid #667eea;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
+                        <span style='color: #1f2937; font-weight: 600;'>{i}. {step}</span>
+                        </div>
+                        """, unsafe_allow_html=True)
+                    
+                    st.markdown("---")
+                    st.markdown("""
+                    **💡 Next steps:**
+                    - Ask: *"What insurance do I need?"* for insurance recommendations
+                    - Ask: *"Show risk assessment"* to review the risks again
+                    """)
+            
+            # 3️⃣ INSURANCE PLANS (When requested)
+            elif user_intent == "insurance":
+                if plan_obj.get("recommended_insurance"):
                     st.markdown(
                         """<div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
                         padding: 25px; border-radius: 15px; margin: 25px 0; box-shadow: 0 8px 32px rgba(0,0,0,0.2);'>
@@ -1048,75 +1135,72 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                         </div>""",
                         unsafe_allow_html=True
                     )
-
-                
+                    
                     for plan in plan_obj["recommended_insurance"]:
                         policy_details = plan.get("policy_details", {})
-                
                         policy_explanation = (
                             policy_details.get("policy_explanation")
                             or plan.get("policy_explanation")
                             or "No explanation provided"
                         )
-                
                         why_choose = plan.get("why_choose_this_plan", [])
-                
+                        
                         st.markdown(f"""
-                <div style='background: white; padding: 30px; border-radius: 20px; 
-                border: 3px solid #667eea; margin: 25px 0;
-                box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
-                transition: all 0.3s ease;'>
-                
-                <h3 style='color: #667eea; font-weight: 800; margin-bottom: 20px; font-size: 1.8em;'>
-                🛡️ {plan.get('plan_name', 'N/A')}
-                </h3>
-                
-                <div style='background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); 
-                padding: 15px; border-radius: 12px; margin: 15px 0; border-left: 5px solid #667eea;'>
-                <strong style='color: #374151; font-size: 1.1em;'>📌 Best for:</strong><br>
-                <span style='color: #1f2937; font-weight: 500; font-size: 1.05em;'>{plan.get('best_for', 'N/A')}</span>
-                </div>
-                
-                <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;'>
-                
-                <div style='background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
-                padding: 15px; border-radius: 12px; border-left: 5px solid #10b981;'>
-                <strong style='color: #065f46; font-size: 1.1em;'>💰 Policy Cost</strong><br>
-                <span style='color: #047857; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_cost', 'N/A')}</span>
-                </div>
-                
-                <div style='background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); 
-                padding: 15px; border-radius: 12px; border-left: 5px solid #3b82f6;'>
-                <strong style='color: #1e40af; font-size: 1.1em;'>🛡️ Coverage</strong><br>
-                <span style='color: #1e3a8a; font-weight: 700; font-size: 1.2em;'>{policy_details.get('coverage_amount', 'N/A')}</span>
-                </div>
-                
-                <div style='background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); 
-                padding: 15px; border-radius: 12px; border-left: 5px solid #f97316;'>
-                <strong style='color: #7c2d12; font-size: 1.1em;'>⏳ Duration</strong><br>
-                <span style='color: #9a3412; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_duration', 'N/A')}</span>
-                </div>
-                
-                <div style='background: linear-gradient(135deg, #fecdd3 0%, #fda4af 100%); 
-                padding: 15px; border-radius: 12px; border-left: 5px solid #f43f5e;'>
-                <strong style='color: #881337; font-size: 1.1em;'>⏰ Waiting Period</strong><br>
-                <span style='color: #9f1239; font-weight: 700; font-size: 1.2em;'>{policy_details.get('waiting_period', 'N/A')}</span>
-                </div>
-                
-                </div>
-                
-                <div style='background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%); 
-                padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #a855f7;'>
-                <strong style='color: #581c87; font-size: 1.2em;'>📘 Policy Explanation</strong><br>
-                <span style='color: #3b0764; line-height: 1.7; font-weight: 500;'>{policy_explanation}</span>
-                </div>
-                
-                <div style='background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
-                padding: 15px; border-radius: 12px; border-left: 5px solid #f59e0b; margin-bottom: 15px;'>
-                <strong style='color: #78350f; font-size: 1.2em;'>⭐ Why choose this plan?</strong>
-                </div>
-                """, unsafe_allow_html=True)
-                
+                        <div style='background: white; padding: 30px; border-radius: 20px; 
+                        border: 3px solid #667eea; margin: 25px 0;
+                        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+                        transition: all 0.3s ease;'>
+                        
+                        <h3 style='color: #667eea; font-weight: 800; margin-bottom: 20px; font-size: 1.8em;'>
+                        🛡️ {plan.get('plan_name', 'N/A')}
+                        </h3>
+                        
+                        <div style='background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%); 
+                        padding: 15px; border-radius: 12px; margin: 15px 0; border-left: 5px solid #667eea;'>
+                        <strong style='color: #374151; font-size: 1.1em;'>📌 Best for:</strong><br>
+                        <span style='color: #1f2937; font-weight: 500; font-size: 1.05em;'>{plan.get('best_for', 'N/A')}</span>
+                        </div>
+                        
+                        <div style='display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;'>
+                        
+                        <div style='background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); 
+                        padding: 15px; border-radius: 12px; border-left: 5px solid #10b981;'>
+                        <strong style='color: #065f46; font-size: 1.1em;'>💰 Policy Cost</strong><br>
+                        <span style='color: #047857; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_cost', 'N/A')}</span>
+                        </div>
+                        
+                        <div style='background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); 
+                        padding: 15px; border-radius: 12px; border-left: 5px solid #3b82f6;'>
+                        <strong style='color: #1e40af; font-size: 1.1em;'>🛡️ Coverage</strong><br>
+                        <span style='color: #1e3a8a; font-weight: 700; font-size: 1.2em;'>{policy_details.get('coverage_amount', 'N/A')}</span>
+                        </div>
+                        
+                        <div style='background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%); 
+                        padding: 15px; border-radius: 12px; border-left: 5px solid #f97316;'>
+                        <strong style='color: #7c2d12; font-size: 1.1em;'>⏳ Duration</strong><br>
+                        <span style='color: #9a3412; font-weight: 700; font-size: 1.2em;'>{policy_details.get('policy_duration', 'N/A')}</span>
+                        </div>
+                        
+                        <div style='background: linear-gradient(135deg, #fecdd3 0%, #fda4af 100%); 
+                        padding: 15px; border-radius: 12px; border-left: 5px solid #f43f5e;'>
+                        <strong style='color: #881337; font-size: 1.1em;'>⏰ Waiting Period</strong><br>
+                        <span style='color: #9f1239; font-weight: 700; font-size: 1.2em;'>{policy_details.get('waiting_period', 'N/A')}</span>
+                        </div>
+                        
+                        </div>
+                        
+                        <div style='background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%); 
+                        padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #a855f7;'>
+                        <strong style='color: #581c87; font-size: 1.2em;'>📘 Policy Explanation</strong><br>
+                        <span style='color: #3b0764; line-height: 1.7; font-weight: 500;'>{policy_explanation}</span>
+                        </div>
+                        
+                        <div style='background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); 
+                        padding: 15px; border-radius: 12px; border-left: 5px solid #f59e0b; margin-bottom: 15px;'>
+                        <strong style='color: #78350f; font-size: 1.2em;'>⭐ Why choose this plan?</strong>
+                        </div>
+                        """, unsafe_allow_html=True)
+                        
                         if isinstance(why_choose, list) and why_choose:
                             for reason in why_choose:
                                 st.markdown(f"""<div style='background: white; padding: 12px; 
@@ -1130,31 +1214,50 @@ if prompt := st.chat_input("💬 Ask about disaster risks, weather, insurance, o
                             box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
                             <span style='color: #1f2937; font-weight: 500;'>✓ {why_choose}</span>
                             </div>""", unsafe_allow_html=True)
-                        else:
-                            st.markdown("""<div style='background: white; padding: 12px; 
-                            margin: 10px 0; border-radius: 10px; border-left: 4px solid #9e9e9e;
-                            box-shadow: 0 2px 8px rgba(0,0,0,0.1);'>
-                            <span style='color: #6b7280; font-weight: 500;'>- Not specified</span>
-                            </div>""", unsafe_allow_html=True)
                         
                         st.markdown("</div>", unsafe_allow_html=True)
-                
+                    
+                    st.markdown("---")
+                    st.markdown("""
+                    **💡 Need more help?**
+                    - Ask: *"Show me the preparedness plan"* for action steps
+                    - Ask: *"Show risk assessment"* to review the risks
+                    """)
                 else:
-                    st.info(
-                        "💡 No specific insurance plans found for the detected risks. "
-                        "Standard home insurance may provide basic coverage."
+                    st.info("💡 No specific insurance plans found for the detected risks. Standard home insurance may provide basic coverage.")
+            
+            # 4️⃣ FULL ASSESSMENT (When explicitly requested)
+            elif user_intent == "full_assessment":
+                with st.expander("📊 Complete Risk Assessment & Preparedness Plan", expanded=True):
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.markdown(
+                            format_risk_summary(
+                                plan_obj["risk_summary"],
+                                plan_obj["weather_analysis"]
+                            ),
+                            unsafe_allow_html=True
+                        )
+                    
+                    with col2:
+                        st.markdown("**📋 Your Preparedness Plan**")
+                        for i, step in enumerate(plan_obj["plan"], 1):
+                            st.markdown(f"**{i}.** {step}")
+                    
+                    if plan_obj.get("recommended_insurance"):
+                        st.markdown("---")
+                        st.markdown("### 🏦 Recommended Insurance Plans")
+                        for plan in plan_obj["recommended_insurance"]:
+                            st.markdown(f"**{plan.get('plan_name')}** - {plan.get('best_for')}")
+                    
+                    st.markdown("---")
+                    st.download_button(
+                        label="📥 Download Full Report (JSON)",
+                        data=json.dumps(plan_obj, indent=2),
+                        file_name=f"preparedness_plan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
+                        mime="application/json"
                     )
-
-
-
-                
-                st.markdown("---")
-                st.download_button(
-                    label="📥 Download Full Report (JSON)",
-                    data=json.dumps(plan_obj, indent=2),
-                    file_name=f"preparedness_plan_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
-                    mime="application/json"
-                )
 
     st.session_state.messages.append({"role": "assistant", "content": response})
     st.session_state.conversation_history.append({"role": "assistant", "content": response})
